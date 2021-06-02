@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "allowJs": true,
+        "outDir": "./out",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "paths": {
+            "@debut/community-core": ["./node_modules/@debut/enterprise-core"]
+        },
+    },
+    "include": ["src/**/*.ts"],
+    "exclude": ["./out", "./node_modules", "src/trash/*"]
+}

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "FTBot",
+        "path": "./out/strategies/follow-trend/",
+        "src": "./src/strategies/follow-trend/"
+    },
+    {
+        "name": "SpikesG",
+        "path": "./out/strategies/spikes-grid/",
+        "src": "./src/strategies/spikes-grid/"
+    }
+]

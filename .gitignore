@@ -1,0 +1,17 @@
+/**/tokens.ts
+node_modules
+out
+dist
+.idea
+package-lock.json
+configs.json
+/**/progress.json
+/**/res_ru*/**
+/**/res_en*/**
+/db
+/logs/**
+/.vscode
+/history
+.tokens.json
+notes.ts
+.DS_Store

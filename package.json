@@ -1,0 +1,52 @@
+{
+    "name": "@debut/strategies",
+    "version": "1.0.0",
+    "private": "true",
+    "description": "",
+    "scripts": {
+        "compile": "tsc",
+        "start": "ts-node --",
+        "serve": "report-serve",
+        "prettier": "prettier --config .prettierrc --write src/**/*.ts",
+        "genetic": "genetic --",
+        "finder": "finder --",
+        "testing": "tester --",
+        "debug": "genetic --ticker=BTCUSDT --bot=FTBOT --days=90 --visualize --useTicks --log"
+    },
+    "author": "Dmitry Yurov",
+    "license": "ISC",
+    "dependencies": {
+        "@debut/community-core": "^2.2.8",
+        "@debut/indicators": "^0.4.3",
+        "@debut/plugin-debug": "^1.0.6",
+        "@debut/plugin-genetic-shutdown": "^1.0.9",
+        "@debut/plugin-grid": "^1.0.9",
+        "@debut/plugin-reinvest": "^1.0.8",
+        "@debut/plugin-report": "^1.0.17",
+        "@debut/plugin-session": "^1.0.9",
+        "@debut/plugin-stats": "^1.0.9",
+        "@debut/plugin-utils": "^1.0.9",
+        "@debut/plugin-virtual-takes": "^1.0.8"
+    },
+    "devDependencies": {
+        "@debut/types": "^1.0.8",
+        "@types/node": "^15.6.1",
+        "@typescript-eslint/eslint-plugin": "^4.26.0",
+        "@typescript-eslint/parser": "^4.26.0",
+        "eslint": "^7.27.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^3.4.0",
+        "git-format-staged": "^2.1.1",
+        "husky": "^4.3.8",
+        "jest": "^27.0.1",
+        "pm2": "^4.5.6",
+        "prettier": "^2.3.0",
+        "tail-file": "^1.4.14",
+        "typescript": "^4.3.2"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "git-format-staged -f 'prettier --stdin --stdin-filepath \"{}\"' '*.ts' '*.json'"
+        }
+    }
+}
