@@ -77,8 +77,6 @@ export class SpikesG extends Debut {
                         },
                     },
                 ],
-                color: 'red',
-                levels: [],
                 inChart: true,
             },
         ];

@@ -54,8 +54,6 @@ export class FTBot extends Debut {
                         },
                     },
                 ],
-                color: 'red',
-                levels: [],
                 inChart: true,
             },
         ];
