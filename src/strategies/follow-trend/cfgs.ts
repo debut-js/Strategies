@@ -1,37 +1,52 @@
 import { FTOptions } from './bot';
 
-// Попробовать на м5 погонять выглядит перспективно
-export const CRVUSDT: FTOptions = {
+export const AVAXUSDT: FTOptions = {
     broker: 'binance',
-    ticker: 'CRVUSDT',
+    ticker: 'AVAXUSDT',
     currency: 'USDT',
     interval: '5min',
-    stopLoss: 6.42,
-    takeProfit: 1.27,
+    stopLoss: 8.08,
+    takeProfit: 2,
     trailing: false,
     amount: 500,
-    fastPeriod: 42,
-    slowPeriod: 94,
-    openPercent: 1.38,
+    fastPeriod: 22,
+    slowPeriod: 137,
+    openPercent: 2.13,
     fee: 0.1,
     margin: true,
     id: 29,
 };
 
-// Более менее ровный тейк стоп
-export const FTMUSDT: FTOptions = {
+export const OMGUSDT: FTOptions = {
     broker: 'binance',
-    ticker: 'FTMUSDT',
+    ticker: 'OMGUSDT',
     currency: 'USDT',
-    interval: '15min',
-    stopLoss: 6.75,
-    takeProfit: 4.08,
+    interval: '5min',
+    stopLoss: 8.84,
+    takeProfit: 2.47,
     trailing: false,
     amount: 500,
-    fastPeriod: 35,
-    slowPeriod: 129,
-    openPercent: 1.65,
-    margin: true,
+    fastPeriod: 16,
+    slowPeriod: 159,
+    openPercent: 1.07,
     fee: 0.1,
+    margin: true,
+    id: 29,
+};
+
+export const XLMUSDT: FTOptions = {
+    broker: 'binance',
+    ticker: 'XLMUSDT',
+    currency: 'USDT',
+    interval: '5min',
+    stopLoss: 7.4,
+    takeProfit: 0.37,
+    trailing: false,
+    amount: 500,
+    fastPeriod: 7,
+    slowPeriod: 117,
+    openPercent: 1.31,
+    fee: 0.1,
+    margin: true,
     id: 29,
 };

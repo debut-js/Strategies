@@ -66,7 +66,6 @@ const meta: DebutMeta = {
         } else if (env === WorkingEnv.tester) {
             bot.registerPlugins([reportPlugin()]);
             bot.plugins.report.addIndicators(bot.getIndicators());
-
         } else if (env === WorkingEnv.production) {
             bot.registerPlugins([debugPlugin()]);
             bot.opts.reduceEquity = true;
