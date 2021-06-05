@@ -45,3 +45,9 @@
 | martingale  |  number \[1-2\] | Коэффициент мартингейла для сетки |
 | fibo  |  boolean | Уровни по Фибоначчи для сетки |
 | reversed  |  boolean | Сетка контр трендовая или трендовая (true - контр трендовая) |
+
+## Результаты в тестере, после генетической оптимизации
+
+<p align="center"><img src="img/BATUSDT.png" width="300"></p>
+
+<p align="center"><img src="img/FILUSDT.png" width="800"></p>
