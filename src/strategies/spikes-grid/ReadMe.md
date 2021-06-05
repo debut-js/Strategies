@@ -48,6 +48,6 @@
 
 ## Результаты в тестере, после генетической оптимизации
 
-<p align="center"><img src="img/BATUSDT.png" width="300"></p>
+<p align="center"><img src="img/BATUSDT.png" width="800"></p>
 
 <p align="center"><img src="img/FILUSDT.png" width="800"></p>
