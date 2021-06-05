@@ -156,15 +156,9 @@ export class SpikesG extends Debut {
         } else if (this.events === 'ABC') {
             // ABC - касание снизу проход через середину касание сверху
             target = OrderType.SELL;
-        } else if (this.events === 'ABA') {
-            // ABA - касание снизу касание середины касание снизу
-            target = OrderType.BUY;
         } else if (this.events === 'CBA') {
             // CBA - касание верха проход через середину касание низа
             target = OrderType.BUY;
-        } else if (this.events === 'CBC') {
-            // CBC - касание верха касание середины касание верха
-            target = OrderType.SELL;
         }
 
         if (target) {
@@ -175,7 +169,7 @@ export class SpikesG extends Debut {
 
         const activeOrder = this.orders[0];
 
-        if (activeOrder && target !== activeOrder.type && this.opts.useClose) {
+        if (activeOrder && target !== activeOrder.type && this.opts.useClose && this.orders.length === 1) {
             await this.closeOrder(activeOrder);
         }
 
