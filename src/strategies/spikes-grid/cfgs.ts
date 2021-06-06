@@ -1,29 +1,29 @@
 import { SpikesGOptions } from './bot';
 
-export const BATUSDT: SpikesGOptions = {
+export const BTCUSDT: SpikesGOptions = {
     broker: 'binance',
-    ticker: 'BATUSDT',
+    ticker: 'BTCUSDT',
     currency: 'USDT',
     interval: '15min',
     amount: 500,
     fee: 0.1,
-    eventExpireBars: 42,
-    takeProfit: 2,
+    eventExpireBars: 64,
+    takeProfit: 8.69,
     stopLoss: 30,
-    step: 3.29,
+    step: 9.98,
     levelsCount: 3,
-    martingale: 1.68,
+    martingale: 2,
     fibo: false,
-    barsTrend: 22,
+    barsTrend: 52,
     reversed: true,
-    bandsPeriod: 22,
-    bandsDev: 1.61,
-    usePeaks: false,
+    bandsPeriod: 74,
+    bandsDev: 2.75,
+    usePeaks: true,
     buyOnly: false,
     margin: true,
     useClose: false,
     id: 29,
-    lotsMultiplier: 1,
+    lotsMultiplier: 1.74,
 };
 
 export const FILUSDT: SpikesGOptions = {

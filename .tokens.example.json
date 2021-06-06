@@ -1,4 +1,5 @@
 {
     "binance": "YOU_BINANCE_TOKEN",
-    "binanceSecret": "YOU_BINANCE_SECRET"
+    "binanceSecret": "YOU_BINANCE_SECRET",
+    "tinkoff": "YOU_TINKOFF_TOKEN"
 }

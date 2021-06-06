@@ -5,16 +5,15 @@ export const CRVUSDT: FTOptions = {
     ticker: 'CRVUSDT',
     currency: 'USDT',
     interval: '15min',
-    stopLoss: 8.62,
-    takeProfit: 5.17,
+    stopLoss: 7.59,
+    takeProfit: 5.35,
     trailing: false,
     amount: 500,
     fastPeriod: 33,
-    slowPeriod: 187,
-    openPercent: 8,
+    slowPeriod: 185,
+    openPercent: 7.85,
     fee: 0.1,
     margin: true,
-    id: 29,
 };
 
 export const QTUMUSDT: FTOptions = {
