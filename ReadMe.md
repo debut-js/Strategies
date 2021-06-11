@@ -198,6 +198,7 @@ pm2 start ./out/bootstrap.js
 ```bash
 pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
 ```
+Для Binance, параметров запуска можно передать 2: `--btoken=...` `--bsecret=...` если нужно изменить именя токенов.
 
 Далее для работы и мониторинга можно использовать набор команд `pm2`
 
