@@ -126,7 +126,7 @@ npm run compile
 
 Для запуска выполните команду:
 ```bash
-npm run testing -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=20 --amount=500
+npm run testing -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=20
 ```
 
 Для просмотра результатов тестирования в браузере выполните
