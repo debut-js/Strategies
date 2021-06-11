@@ -3,6 +3,19 @@ import { cli } from '@debut/plugin-utils';
 import { DebutOptions, WorkingEnv } from '@debut/types';
 import { SpikesGOptions } from './strategies/spikes-grid/bot';
 
+// Создадим транспортный уровень для работы с брокером
+// Обратите внимание! Требуется наличие токена в файле ./.tokens.json
+const binanceTransport = new BinanceTransport();
+// const tinkoffTransport = new TinkoffTransport();
+
+const getTransport = (cfg: DebutOptions) => {
+    if (cfg.broker === 'binance') {
+        return binanceTransport;
+        // } else {
+        //     return tinkoffTransport;
+    }
+};
+
 // Главная функция запуска торговой стратегии
 async function bootstrap() {
     // Запросим мета информацию для создания бота на основе стратегии SpikesG, по его имени в фалйе schema.json
@@ -27,16 +40,3 @@ async function bootstrap() {
 
 // Запуск
 bootstrap();
-
-// Создадим транспортный уровень для работы с брокером
-// Обратите внимание! Требуется наличие токена в файле ./.tokens.json
-const binanceTransport = new BinanceTransport();
-// const tinkoffTransport = new TinkoffTransport();
-
-const getTransport = (cfg: DebutOptions) => {
-    if (cfg.broker === 'binance') {
-        return binanceTransport;
-        // } else {
-        //     return tinkoffTransport;
-    }
-};
