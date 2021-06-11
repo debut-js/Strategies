@@ -5,13 +5,12 @@ import { createSessionValidator } from '@debut/plugin-session';
 import { FTBot, FTOptions } from './bot';
 import { BaseTransport, DebutMeta, GeneticSchema, WorkingEnv } from '@debut/types';
 
-export const parameters: GeneticSchema<FTOptions> = {
+export const parameters = {
     stopLoss: { min: 0.2, max: 9 },
     takeProfit: { min: 0.2, max: 9 },
-    trailing: { bool: true },
     openPercent: { min: 1, max: 15 },
-    fastPeriod: { min: 2, max: 100, int: true },
-    slowPeriod: { min: 15, max: 200, int: true },
+    fastSMAPeriod: { min: 2, max: 30, int: true },
+    slowSMAPeriod: { min: 10, max: 30, int: true },
 };
 
 const meta: DebutMeta = {

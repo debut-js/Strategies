@@ -193,6 +193,12 @@ npm install -g pm2
 pm2 start ./out/bootstrap.js
 ```
 
+Для кастомизации имени токена в файле `.tokens.json`,  можно передать параметр запуска и в файле `.tokens.json` записать токен в таком формате: `{ "tinkoffCusotm": "YOU_API_TOKEN" }`
+
+```bash
+pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
+```
+
 Далее для работы и мониторинга можно использовать набор команд `pm2`
 
 `pm2 list` - список активных процессов

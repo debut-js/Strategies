@@ -1,19 +1,20 @@
 import { FTOptions } from './bot';
 
-export const CRVUSDT: FTOptions = {
-    broker: 'binance',
-    ticker: 'CRVUSDT',
+export const TSLA: FTOptions = {
+    broker: 'tinkoff',
+    ticker: 'TSLA',
     currency: 'USDT',
     interval: '15min',
-    stopLoss: 7.59,
-    takeProfit: 5.35,
+    stopLoss: 3.75,
+    takeProfit: 4.63,
     trailing: false,
     amount: 500,
-    fastPeriod: 33,
-    slowPeriod: 185,
-    openPercent: 7.85,
+    fastPeriod: 10,
+    slowPeriod: 18,
+    openPercent: 1.62,
     fee: 0.1,
     margin: true,
+    id: 25,
 };
 
 export const QTUMUSDT: FTOptions = {
