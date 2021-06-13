@@ -12,9 +12,9 @@ An initial deposit of *$500 was used*
 
 <p align="center"> <img src="/src/strategies/spikes-grid/img/BATUSDT.png" width="800"> </p>
 
-Strategy statistics were collected based on the plugin [statistics](https://github.com/debut-js/Plugins/tree/master/packages/stats), follow the link to learn more about the meaning of some statistics.
+Strategy statistics were collected based on the [plugin statistics](https://github.com/debut-js/Plugins/tree/master/packages/stats), follow the link to learn more about the meaning of some statistics.
 
-Visualization is done using the [Report] plugin (https://github.com/debut-js/Plugins/tree/master/packages/report).
+Visualization is done using the [Report plugin](https://github.com/debut-js/Plugins/tree/master/packages/report).
 
 ## Community edition
 We believe in the power of the community! That is why we decided to publish the project. The community version is free, but it has some limitations in commercial use (income from trading startups is not commerce), as well as technical differences in testing strategies. Join the community, join **[developer chat](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
