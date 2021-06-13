@@ -222,7 +222,7 @@ Generation: 1
 ...
 ```
 
-## Run genetic optimization with busting tickers/tokens
+## Run genetic optimization with tickers/tokens selection
 Run the command:
 ```bash
 npm run finder - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
