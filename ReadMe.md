@@ -1,152 +1,152 @@
-# Торговые стратегии на основе Debut / Community Edition
+# Trading Strategies Based on Debut/Community Edition
+**[Switch to Russian](./ReadMe_ru.md)**
 
-Debut - это экосистема для разработки и запуска торговых стратегий. Аналог известного `ZenBot`, но с гораздо более гибкими возможностями для конструирования стратегий. Все что вам нужно сделать, это придумать и описать точки входа в рынок и подключить нужные [плагины](https://github.com/debut-js/Plugins) для работы. Все остальное - дело техники: **генетические алгоритмы** - помогут подобрать самые эффективные параметры для стратегии (период, стопы, и другие), **модуль подбора тикеров** - поможет найти подходящий для стратегии актив (токен или акцию), на котором она будет работать лучше всего.
+Debut is an ecosystem for developing and launching trading strategies. An analogue of the well-known `ZenBot`, but with much more flexible possibilities for constructing strategies. All you need to do is come up with and describe the entry points to the market and connect the necessary [plugins](https://github.com/debut-js/Plugins) to work. Everything else is a matter of technology: **genetic algorithms** - will help you choose the most effective parameters for the strategy (period, stops, and others), **ticker selection module** - will help you find an asset suitable for the strategy (token or share), on which it will work best.
 
-В основе Debut лежит архитектура ядра и надстраиваемых плагинов, позволяющих гибко кастомизировать любые решения. Оснвной целью всей экосистемы Debut, является упрощение процесса создания и запуска рабочих торговых роботов на различные биржи. На данный момент поддерживаются: **Тинькофф Инвестици** и **Binance**.
+Debut is based on the architecture of the core and add-on plugins that allow flexible customization of any solutions. The main goal of the entire Debut ecosystem is to simplify the process of creating and launching working trading robots on various exchanges. Currently supported: **Tinkoff** and **Binance**.
 
-В проекте есть две стартовые торговые стратегии "Для примера" как нужно работать с системой.
+The project has two starting trading strategies "For example" how to work with the system.
 
-Пример работы стратегии [SpikesG](/src/strategies/spikes-grid/ReadMe.md) за 200 дней. Оптимизация проводилась за 180 дней и 20 дней свободной работы на необученных данных.
-Использовался стартовый депозит в размере *500$*
+An example of the strategy [SpikesG](/src/strategies/spikes-grid/ReadMe.md) in 200 days. Optimization was carried out in 180 days and 20 days of free work on untrained data.
+An initial deposit of *$500 was used*
 
-<p align="center"><img src="/src/strategies/spikes-grid/img/BATUSDT.png" width="800"></p>
+<p align="center"> <img src="/src/strategies/spikes-grid/img/BATUSDT.png" width="800"> </p>
 
-Статистика стратегии собиралась на основе плагина [статистики](https://github.com/debut-js/Plugins/tree/master/packages/stats), по ссылке можно подробнее узнать о значении некоторых статистических данных.
+Strategy statistics were collected based on the plugin [statistics](https://github.com/debut-js/Plugins/tree/master/packages/stats), follow the link to learn more about the meaning of some statistics.
 
-Визуализация выполнена с помощью плагина [Report](https://github.com/debut-js/Plugins/tree/master/packages/report).
+Visualization is done using the [Report] plugin (https://github.com/debut-js/Plugins/tree/master/packages/report).
 
 ## Community edition
-Мы верим в силу сообщества! Именно поэтому решили опубликовать проект. Комьюнити версия бесплатная, но имеет некоторые ограничения в коммерческом использовании (доход от торговли стартегий не является коммерцией), а также технические отличия в тестировании стратегий. Присоединяйтесь к комьюнити, вступайте в **[чат разработчиков](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
+We believe in the power of the community! That is why we decided to publish the project. The community version is free, but it has some limitations in commercial use (income from trading startups is not commerce), as well as technical differences in testing strategies. Join the community, join **[developer chat](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
 
 ## Enterprise edition
-Энтерпрайз версия - это готовый набор инструментария для "больших дядек", для тех, кто занимается услугами торговли или создания стратегий профессионально. Здесь есть всё! И это всё уже готово работать на вас и на повышение скорости вашей разработки.
+Enterprise version is a ready-made set of tools for "big guys", for those who are engaged in trade services or create strategies professionally. Everything is here! And this is all ready to work for you and to increase the speed of your development.
 
 <table>
 <thead>
 <tr>
-<th>Функционал</th>
-<th>Community</th>
-<th>Enterprise</th>
+<th> Functionality </th>
+<th> Community </th>
+<th> Enterprise </th>
 </tr>
 </thead>
-<tbody><tr>
-<td>Тестер стратегий</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<tbody> <tr>
+<td> Strategy Tester </td>
+<td> ✅ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Эмуляция OHLC тиков в тестере</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td> Emulation of OHLC ticks in the tester </td>
+<td> ✅ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Моудль поиска (finder) подходящих под стратегию активов</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td> Search modle (finder) suitable for the strategy of assets </td>
+<td> ✅ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Набор плагинов из <a href="https://github.com/debut-js/Plugins" target="_blank" rel="noopener">коллекции</a></td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td> A collection of plugins from the <a href="https://github.com/debut-js/Plugins" target="_blank" rel="noopener"> collection </a> </td>
+<td> ✅ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Базовый набор готовых торговых стратегий</td>
-<td align="center">✅</td>
-<td align="center">✅</td>
+<td> Basic set of ready-made trading strategies </td>
+<td> ✅ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Данные свеч м1 для эмуляция тиков</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> M1 candlestick data for tick emulation </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Синтетическая эмуляция тиков в тестере (размер тика не более 0.75%)</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> Synthetic emulation of ticks in the tester (tick size no more than 0.75%) </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Система управления рисками</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> Risk Management System </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Отчеты о работе в <a href="https://t.me/debutjs" target="_blank" rel="noopener">мессенджер</a></td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> Work reports in <a href="https://t.me/debutjs" target="_blank" rel="noopener"> messenger </a> </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Готовые решения для запуска на VPS/VDS и Cloud серверах</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> Ready solutions to run on VPS/VDS and Cloud servers </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Техническая поддержка</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> Technical Support </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
 <tr>
-<td>Система быстрых подписок на сигналы по токену, для продаж сигналов</td>
-<td align="center">❌</td>
-<td align="center">✅</td>
+<td> System of fast subscriptions to signals by token, for signal sales </td>
+<td> ❌ </td>
+<td> ✅ </td>
 </tr>
-</tbody></table>
+</tbody> </table>
 
-Мы ведем прямой эфир сделок на основе Enterprise решения в нашем [телеграмм канале](https://t.me/debutjs)
+We are streaming Enterprise-based deals live on our [telegram channel](https://t.me/debutjs)
 
-**Узнайте цену, отправив запрос на [sales@debutjs.io](mailto:sales@debutjs.io)**
+**Find out the price by sending a request to [sales@debutjs.io](mailto:sales@debutjs.io)**
 
-**Дисклеймер**
+**Disclaimer**
 
-- Debut не гарантирует 100% вероятности получения прибыли. Используйте его на свой страх и риск, полагаясь на собственный проффесионализм.
-- Криптовалюта это глобальный эксперимент, поэтому Debut - тоже. То есть оба могут выйти из строя в любой момент.
-# Начало работы
-Все что нужно знать, для запуска и разработки собственных решений на основе Debut.
+- Debut does not guarantee 100% probability of making a profit. Use it at your own peril and risk, relying on your own professionalism.
+- Cryptocurrency is a global experiment, so Debut is also. That is, both can fail at any time.
+All you need to know
 
-**Помните!** Запуск бота и торговля в целом требуют тщательного изучения связанных с этим рисков и параметров.
-Неправильная настройка может стать причиной серьезных финансовых потерь.
+** Remember! ** Starting a bot and trading in general requires careful study of the associated risks and parameters.
+Incorrect settings can cause serious financial losses.
 
-## Системные требования
-Для работы вам потребуется [NodeJS 14.x.x / npm 7.x.x](https://nodejs.org/en/) ([инструкция по установке](https://htmlacademy.ru/blog/boost/tools/installing-nodejs))
+## System requirements
+To work, you need [NodeJS 14.xx/npm 7.xx](https://nodejs.org/en/) ([installation instructions](https://htmlacademy.ru/blog/boost/tools/installing-nodejs))
 
-## [Документация(https://debutjs.io)]
+## [Documentation](https://debutjs.io)
 
-## Файловая структура проекта
+## Project file structure
 
-```
-|-- .tokens.json - пользовательские токены доступа для работы с биржей
-|-- schema.json - описание расположения файлов запуска
-|-- public/ - папка для отчетов finder (создается при запуске finder)
-|-- src/
-    |-- strategies/
-        |-- strategy1/ - директория стратегий
-            |-- bot.ts - Реализация стратегии
-            |-- meta.ts - Мета данные, для запуска и для оптимизации
-            |-- cfgs.ts - Конфигурации, для запуска в tester и genetic
-        |-- strategy2/
+`` ''
+| - .tokens.json - custom access tokens for working with the exchange
+| - schema.json - description of the location of the startup files
+| - public/- folder for finder reports (created when finder starts)
+| - src/
+    | - strategies/
+        | - strategy1/- strategies directory
+            | - bot.ts - Strategy implementation
+            | - meta.ts - Meta data, for launching and for optimization
+            | - cfgs.ts - Configurations, for launching in tester and genetic
+        | - strategy2/
         ...
 
-```
+`` '
 
-# Установка и настройка
+# Installation and configuration
 
-### Получение токенов API
+### Obtaining API tokens
 
-[Инструкция Binance](https://www.binance.com/ru/support/faq/360002502072)
+[Binance instructions](https://www.binance.com/ru/support/faq/360002502072)
 
-[Инструкция Tinkoff](https://tinkoffcreditsystems.github.io/invest-openapi/auth/#_2)
+[Tinkoff instructions](https://tinkoffcreditsystems.github.io/invest-openapi/auth)
 
-### Установка токенов
-Для работы необходимо создать файл .tokens.json, в него добавить токен для работы.
+### Installing tokens
+To work, you need to create a .tokens.json file, add a token to it for work.
 
-Для Тинькофф:
+For Tinkoff:
 
 ```json
 {
-    "tinkoff": "YOU_TOKEN"
+    "tinkoff":" YOU_TOKEN"
 }
 ```
 
-Для Binance:
+For Binance:
 ```json
 {
     "binance": "YOU_TOKEN",
@@ -154,112 +154,114 @@ Debut - это экосистема для разработки и запуск�
 }
 ```
 
-Можно использовать любое название поля для токена, подробнее в разделе [документации о настройках токенов]().
+You can use any field name for the token, for more details see the [documentation on token settings]() section.
 
-## Установка npm пакетов
-Для установки пакетов выполните:
+## Installing npm packages
+To install packages, run:
 ```bash
 npm install
 ```
 
-## Сборка проекта
+## Build the project
 ```bash
-npm run compile
+npm run compile`
 ```
 
-*Рекомендуется выполнять сборку перед каждым запуском тестирования*
+*It is recommended to build before each test run*
 
-`npm run compile && npm run ...`
-## Запуск тестирования на исторических данных
-Исторические данные будут загружаться автоматически при запуске. Все загружаемые данные сохраняются в папку `history` в корне проекта, затем переиспользуются.
+` npm run compile && npm run ... `
 
-**Перед запуском стоит убедиться:**
-* В файле `cfgs.ts` есть нужный вам тикер
-* Для получения истории в файле `.tokens.json` может требоваться токен
-* История акции или токена существует в запрашиваемом количестве дней
+## Start testing on historical data
+Historical data will be loaded automatically at startup All loaded data is saved in the `history` folder in the root of the project, then reused.
 
-Для запуска выполните команду:
+** Before starting, make sure: **
+* The `cfgs.ts` file contains the ticker you need
+* To get history in the` .tokens.json file `a token may be required
+* The history of a stock or token exists in the requested number of days
+
+To start, run the command:
 ```bash
-npm run testing -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=20
+npm run testing - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=20
 ```
 
-Для просмотра результатов тестирования в браузере выполните
+To view the test results in a browser, execute
 ```bash
 npm run serve
 ```
 
-Результаты будут доступны для просмотра на `http://localhost:5000/`
+The results will be available for viewing on `http://localhost: 5000/`
 
-Подробрее о параметраз запуска тестирования можно прочитать в [документации](https://debutjs.io/ru/#/)
+You can read more about the test run parameters in the [documentation](https://debutjs.io/ru/#/)
 
-## Запуск генетической оптимизации
+## Launching genetic optimization
+  maximum: 20.8,
 
-Выполните команду:
+Run the command:
 ```bash
-npm run genetic -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
+npm run genetic - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
 ```
 
-Подробрее о параметрах запуска генетика можно прочитать в [документации](https://debutjs.io/ru/#/)
+Podrobree on startup parameters Genet can be read in [documentation](https://debutjs.io/ru/#/)
 
-После запуска с параметром --log, генетик будет выдавать данные в консоль
+After starting with the --log parameter, the geneticist will output data to the console
 
 ```bash
-Binance history loading from Wed Nov 18 2020 03:00:00 GMT+0300 (Moscow Standard Time)...
+Binance history loading from Wed Nov 18 2020 03:00: 00 GMT + 0300 (Moscow Standard Time) ...
 
 ----- Genetic Start with 17314 candles -----
 
-Generation:  0
-Generation time:  5.15 s
-Stats:  {
+Generation: 0
+Generation time: 5.15 s
+Stats: {
   population: 100,
-  maximum: 20.8,
   minimum: -1.24,
-  mean: 2.5174,
+  mean: 2.5174 ,
   stdev: 3.8101996325652054
 }
-Generation:  1
+Generation: 1
 ...
 ```
 
-## Запуск генетической оптимизации с перебором тикеров/токенов
-Выполните команду:
+## Run genetic optimization with busting tickers/tokens
+Run the command:
 ```bash
-npm run finder -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
+npm run finder - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
 ```
-Используйте опцию `--crypt`, чтобы брать крипто-пары из файла `./crypt.json` (По умаолчанию там актуальные кросс-маржинальные пары Binance)
+Use the `--crypt` option to take crypto pairs from the`./Crypt.json` file (By default, there are actual Binance cross-margin pairs)
 
-По умолчанию для потоковой оптимизации используется набор тикеров акций из файла `stocks.json`
+By default, a set of stock tickers is used for streaming optimization from the file `stocks.json`
 
-Подробрее о параметрах запуска потокового генетика можно прочитать в [документации](https://debutjs.io/ru/#/)
+You can read more about the parameters for launching streaming genetics in the [documentation](https://debutjs.io/)
 
-## Запуск стратегии
+## Starting a strategy
 
-Установите любой процесс менеджер для NodeJS, например PM2
+Install any process manager for NodeJS, for example PM2,,,
 
 ```bash
 npm install -g pm2
 ```
 
-Выполните команду запуска, путь к файлу запуска стратегии в директории `./out`.
-Пример такого файла можно найти здесь `/src/bootstrap.ts`
+Execute the launch command, the path to the strategy launch file in the `./Out` directory.
+An example of such a file can be found here `/src/bootstrap.ts`
 
-```bash
+``` bash
 pm2 start ./out/bootstrap.js
 ```
 
-Для кастомизации имени токена в файле `.tokens.json`,  можно передать параметр запуска и в файле `.tokens.json` записать токен в таком формате: `{ "tinkoffCusotm": "YOU_API_TOKEN" }`
+To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCusotm": "YOU_API_TOKEN"} `
 
 ```bash
-pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
+pm2 start ./out/bootstrap.js - --token=tinkoffCustom
 ```
-Для Binance, параметров запуска можно передать 2: `--btoken=...` `--bsecret=...` если нужно изменить именя токенов.
 
-Далее для работы и мониторинга можно использовать набор команд `pm2`
+For Binance, parameters launch, you can pass 2: `--btoken=...` `--bsecret=...` if you need to change the name of tokens.
 
-`pm2 list` - список активных процессов
+Further, for operation and monitoring, you can use the command set `pm2``
 
-`pm2 delete $pid` - остановка процесса
+pm2 list` - a list of active processes
 
-`pm2 log` - для просмотра логов запущенных процессов
+`pm2 delete $ pid` - stop a process
 
-и другие команды, о которых можно прочитать в документации процесс менеджера
+`pm2 log` - to view the logs of running processes
+
+and other commands, which can be found in the documentation of the process manager
