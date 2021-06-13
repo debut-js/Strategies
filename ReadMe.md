@@ -102,7 +102,7 @@ We are streaming Enterprise-based deals live on our [telegram channel](https://t
 - Cryptocurrency is a global experiment, so Debut is also. That is, both can fail at any time.
 All you need to know
 
-** Remember! ** Starting a bot and trading in general requires careful study of the associated risks and parameters.
+**Remember!** Starting a bot and trading in general requires careful study of the associated risks and parameters.
 Incorrect settings can cause serious financial losses.
 
 ## System requirements
@@ -112,7 +112,7 @@ To work, you need [NodeJS 14.xx/npm 7.xx](https://nodejs.org/en/) ([installation
 
 ## Project file structure
 
-`` ''
+```
 | - .tokens.json - custom access tokens for working with the exchange
 | - schema.json - description of the location of the startup files
 | - public/- folder for finder reports (created when finder starts)
@@ -125,7 +125,7 @@ To work, you need [NodeJS 14.xx/npm 7.xx](https://nodejs.org/en/) ([installation
         | - strategy2/
         ...
 
-`` '
+```
 
 # Installation and configuration
 
