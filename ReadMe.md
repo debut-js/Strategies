@@ -31,63 +31,63 @@ Debut - это экосистема для разработки и запуск�
 </thead>
 <tbody><tr>
 <td>Тестер стратегий</td>
-<td>✅</td>
-<td>✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Эмуляция OHLC тиков в тестере</td>
-<td>✅</td>
-<td>✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Моудль поиска (finder) подходящих под стратегию активов</td>
-<td>✅</td>
-<td>✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Набор плагинов из <a href="https://github.com/debut-js/Plugins" target="_blank" rel="noopener">коллекции</a></td>
-<td>✅</td>
-<td>✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Базовый набор готовых торговых стратегий</td>
-<td>✅</td>
-<td>✅</td>
+<td align="center">✅</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Данные свеч м1 для эмуляция тиков</td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Синтетическая эмуляция тиков в тестере (размер тика не более 0.75%)</td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Система управления рисками</td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Отчеты о работе в <a href="https://t.me/debutjs" target="_blank" rel="noopener">мессенджер</a></td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Готовые решения для запуска на VPS/VDS и Cloud серверах</td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Техническая поддержка</td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 <tr>
 <td>Система быстрых подписок на сигналы по токену, для продаж сигналов</td>
-<td>❌</td>
-<td>✅</td>
+<td align="center">❌</td>
+<td align="center">✅</td>
 </tr>
 </tbody></table>
 
