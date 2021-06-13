@@ -174,7 +174,7 @@ npm run compile`
 ## Start testing on historical data
 Historical data will be loaded automatically at startup All loaded data is saved in the `history` folder in the root of the project, then reused.
 
-** Before starting, make sure: **
+**Before starting, make sure:**
 * The `cfgs.ts` file contains the ticker you need
 * To get history in the` .tokens.json file `a token may be required
 * The history of a stock or token exists in the requested number of days
