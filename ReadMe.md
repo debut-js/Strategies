@@ -193,30 +193,31 @@ The results will be available for viewing on `http://localhost: 5000/`
 
 You can read more about the test run parameters in the [documentation](https://debutjs.io/ru/#/)
 
-## Launching genetic optimization
-  maximum: 20.8,
+## Run genetic optimization
 
 Run the command:
+
 ```bash
 npm run genetic - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
 ```
 
-Podrobree on startup parameters Genet can be read in [documentation](https://debutjs.io/ru/#/)
+More details about the launch parameters of the genetics can be found in the [documentation](https://debutjs.io/)
 
 After starting with the --log parameter, the geneticist will output data to the console
 
 ```bash
-Binance history loading from Wed Nov 18 2020 03:00: 00 GMT + 0300 (Moscow Standard Time) ...
+Binance history loading from Wed Nov 18 2020 03:00:00 GMT + 0300 (Moscow Standard Time) ...
 
 ----- Genetic Start with 17314 candles -----
 
 Generation: 0
 Generation time: 5.15 s
 Stats: {
-  population: 100,
-  minimum: -1.24,
-  mean: 2.5174 ,
-  stdev: 3.8101996325652054
+   population: 100,
+   maximum: 20.8,
+   minimum: -1.24,
+   mean: 2.5174,
+   stdev: 3.8101996325652054
 }
 Generation: 1
 ...
