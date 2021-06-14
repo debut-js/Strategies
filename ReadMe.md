@@ -198,7 +198,7 @@ You can read more about the test run parameters in the [documentation](https://d
 Run the command:
 
 ```bash
-npm run genetic - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
+npm run genetic -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
 ```
 
 More details about the launch parameters of the genetics can be found in the [documentation](https://debutjs.io/)
@@ -226,7 +226,7 @@ Generation: 1
 ## Run genetic optimization with tickers/tokens selection
 Run the command:
 ```bash
-npm run finder - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
+npm run finder -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
 ```
 Use the `--crypt` option to take crypto pairs from the`./Crypt.json` file (By default, there are actual Binance cross-margin pairs)
 
@@ -252,7 +252,7 @@ pm2 start ./out/bootstrap.js
 To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCusotm": "YOU_API_TOKEN"} `
 
 ```bash
-pm2 start ./out/bootstrap.js - --token=tinkoffCustom
+pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
 ```
 
 For Binance, parameters launch, you can pass 2: `--btoken=...` `--bsecret=...` if you need to change the name of tokens.
