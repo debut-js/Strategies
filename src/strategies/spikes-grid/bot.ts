@@ -87,8 +87,7 @@ export class SpikesG extends Debut {
             return;
         }
 
-        const bbands = this.bands.nextValue(candle.c);
-        this.bandsValue = bbands;
+        this.bandsValue = this.bands.nextValue(candle.c);
 
         if (!this.bandsValue) {
             return;
@@ -108,25 +107,25 @@ export class SpikesG extends Debut {
             this.events = this.events.slice(-2);
         }
 
-        if (candle.c < bbands.lower) {
+        if (candle.c < this.bandsValue.lower) {
             this.barsWithoutBottom = 0;
         }
 
-        if (candle.c > bbands.upper) {
+        if (candle.c > this.bandsValue.upper) {
             this.barsWithoutTop = 0;
         }
 
-        if (prevLow > bbands.lower && low < bbands.lower) {
+        if (prevLow > this.bandsValue.lower && low < this.bandsValue.lower) {
             // Ксание тенью свечи низа
             this.addEvent('A');
-        } else if (prevHigh < bbands.upper && high > bbands.upper) {
+        } else if (prevHigh < this.bandsValue.upper && high > this.bandsValue.upper) {
             // Касание тенью свечи верха
             this.addEvent('C');
         } else if (
             // Проход через середину снизу вверх
-            (this.prevCandle.c < bbands.middle && candle.c > bbands.middle) ||
+            (this.prevCandle.c < this.bandsValue.middle && candle.c > this.bandsValue.middle) ||
             // Проход через середину сверху вниз
-            (this.prevCandle.c > bbands.middle && candle.c < bbands.middle)
+            (this.prevCandle.c > this.bandsValue.middle && candle.c < this.bandsValue.middle)
         ) {
             this.addEvent('B');
         }
@@ -161,11 +160,11 @@ export class SpikesG extends Debut {
             target = OrderType.BUY;
         }
 
-        if (target) {
-            this.events = this.events.slice(-2);
-        } else {
+        if (!target) {
             return;
         }
+
+        this.events = this.events.slice(-2);
 
         const activeOrder = this.orders[0];
 
