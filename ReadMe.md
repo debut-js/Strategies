@@ -181,7 +181,7 @@ Historical data will be loaded automatically at startup All loaded data is saved
 
 To start, run the command:
 ```bash
-npm run testing - --bot=FTBot --ticker=CRVUSDT --days=200 --gap=20
+npm run testing -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=20
 ```
 
 To view the test results in a browser, execute
