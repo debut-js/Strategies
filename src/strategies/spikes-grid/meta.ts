@@ -5,6 +5,7 @@ import { createSessionValidator } from '@debut/plugin-session';
 import { SpikesGOptions, SpikesG } from './bot';
 import { StatsState } from '@debut/plugin-stats';
 import { GeneticSchema, DebutMeta, BaseTransport, WorkingEnv } from '@debut/types';
+import { StatsPluginAPI } from '@debut/plugin-stats';
 
 const parameters: GeneticSchema<SpikesGOptions> = {
     // stopLoss: { min: 10, max: 30 },
@@ -44,7 +45,7 @@ const meta: DebutMeta = {
     parameters,
 
     score(bot: SpikesG) {
-        const report = bot.plugins.stats.report();
+        const report = (bot.plugins as StatsPluginAPI).stats.report();
 
         if (bot.plugins.shutdown && bot.plugins.shutdown.isShutdown()) {
             return 0;
