@@ -24,11 +24,15 @@ const parameters: GeneticSchema<SpikesGOptions> = {
 const shutdown = (stats: StatsState, state: ShutdownState) => {
     const totalOrders = stats.long + stats.short;
 
-    if (
-        (!state.prevOrders && totalOrders < 5) ||
-        (state.prevOrders && totalOrders - state.prevOrders < 5) ||
-        stats.maxMarginUsage > 10000
-    ) {
+    if (!state.prevOrders && totalOrders < 5) {
+        return true;
+    }
+
+    if (state.prevOrders && totalOrders - state.prevOrders < 5) {
+        return true;
+    }
+
+    if (stats.maxMarginUsage > 10000) {
         return true;
     }
 
