@@ -23,7 +23,6 @@ export const BTCUSDT: SpikesGOptions = {
     margin: true,
     useClose: false,
     id: 29,
-    lotsMultiplier: 1.74,
 };
 
 export const FILUSDT: SpikesGOptions = {
@@ -48,5 +47,4 @@ export const FILUSDT: SpikesGOptions = {
     buyOnly: false,
     margin: true,
     useClose: false,
-    lotsMultiplier: 1.02,
 };
