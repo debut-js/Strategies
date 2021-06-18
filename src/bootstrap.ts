@@ -3,8 +3,8 @@ import { cli } from '@debut/plugin-utils';
 import { DebutOptions, WorkingEnv } from '@debut/types';
 import { SpikesGOptions } from './strategies/spikes-grid/bot';
 
-// Создадим транспортный уровень для работы с брокером
-// Обратите внимание! Требуется наличие токена в файле ./.tokens.json
+// Create a transport layer for working with a broker
+// Note! The token is required in the ./.tokens.json file
 const binanceTransport = new BinanceTransport();
 // const tinkoffTransport = new TinkoffTransport();
 
@@ -17,44 +17,45 @@ const getTransport = (cfg: DebutOptions) => {
 };
 
 const bootSettings = {
-    // Выбираем стратегию
+    // Choose a strategy
     strategyName: 'SpikesG',
-    // Выбираем нужный тикер, который существует в файле cfgs.ts
+    // Select a ticker, which exists in the cfgs.ts file
     tickName: 'BTCUSDT',
-    // Выбираем кол-во дней для обучения
+    // Choose the number of days for training
     learnDays: 14,
 };
 
-// Главная функция запуска торговой стратегии
+// Main function for launching a trading strategy
 async function bootstrap() {
-    // Запросим мета информацию для создания бота на основе стратегии SpikesG, по его имени в фалйе schema.json
-    // А также доступные конфигурации стратегии из файлов cfgs.ts
+    // Request meta information to create a bot based on the SpikesG strategy, by its name in the schema.json file
+    // And also available strategy configurations from cfgs.ts files
     const { meta, configs }: cli.BotData = cli.getBotData(bootSettings.strategyName);
 
-    // Если конфигурации не существует - выбрасываем
+    // If the configuration does not exist, throw it away
     if (!configs[bootSettings.tickName]) {
         console.log(`${bootSettings.tickName} not found in cfgs.ts. Shutdowning...`);
         return process.exit(0);
     }
 
-    // Заберем нужное поле из доступных конфигураций
+    // Take the required field from the available configurations
     const config = configs[bootSettings.tickName] as SpikesGOptions;
-    // Создание робота в режиме Production
+    // Create a robot in Production mode
     const bot = await meta.create(getTransport(config), config, WorkingEnv.production);
 
-    // Запустим предстартовое обучение стратегии, для плавного перехода в боевой режим,
-    // на $(bootSettings.learnDays)[14] днях истории до текущего момента
+    // Start prelaunch strategy training, for a smooth transition to combat mode,
+    // at $(bootSettings.learnDays)[14] days of history until the current moment
     await bot.learn(bootSettings.learnDays);
 
     console.log('Bot initialized and learned, starting...');
 
-    // Подписка на данные от биржи в реальном времени для работы
-    // Вызов метода start, возвращает функцию для остановки, которая при вызове удалит стратегию и закроет активные позиции по ней
+    // Subscribe to data from the exchange in real time to work
+    // Calling the start method, returns the stop function, which, when called,
+    // will delete the strategy and close active positions on it
     const dispose = await bot.start();
 
-    // Остановка торговли
+    // Stop trading
     // dispose()
 }
 
-// Запуск
+// Good Luck 🍀
 bootstrap();
