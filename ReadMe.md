@@ -164,7 +164,7 @@ npm install
 
 ## Build the project
 ```bash
-npm run compile`
+npm run compile
 ```
 
 *It is recommended to build before each test run*
