@@ -57,7 +57,7 @@ export class SpikesG extends Debut {
         return [
             {
                 name: 'bbands',
-                lines: [
+                figures: [
                     {
                         name: 'upper',
                         getValue: () => {

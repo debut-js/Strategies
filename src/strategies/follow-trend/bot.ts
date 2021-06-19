@@ -40,7 +40,7 @@ export class FTBot extends Debut {
         return [
             {
                 name: 'ft',
-                lines: [
+                figures: [
                     {
                         name: 'fast',
                         getValue: () => {

@@ -17,23 +17,23 @@
     "license": "ISC",
     "dependencies": {
         "@debut/community-core": "^2.2.18",
-        "@debut/indicators": "^0.4.4",
-        "@debut/plugin-debug": "^1.0.7",
-        "@debut/plugin-genetic-shutdown": "^1.0.11",
-        "@debut/plugin-grid": "^1.0.12",
-        "@debut/plugin-reinvest": "^1.0.9",
-        "@debut/plugin-report": "^1.0.22",
-        "@debut/plugin-session": "^1.0.11",
-        "@debut/plugin-stats": "^1.0.10",
-        "@debut/plugin-utils": "^1.0.12",
-        "@debut/plugin-virtual-takes": "^1.0.9"
+        "@debut/indicators": "^0.4.6",
+        "@debut/plugin-debug": "^1.0.8",
+        "@debut/plugin-genetic-shutdown": "^1.0.12",
+        "@debut/plugin-grid": "^1.0.13",
+        "@debut/plugin-reinvest": "^1.0.10",
+        "@debut/plugin-report": "^1.1.1",
+        "@debut/plugin-session": "^1.0.12",
+        "@debut/plugin-stats": "^1.0.11",
+        "@debut/plugin-utils": "^1.0.13",
+        "@debut/plugin-virtual-takes": "^1.0.10"
     },
     "devDependencies": {
-        "@debut/types": "^1.0.12",
-        "@types/node": "^15.12.2",
+        "@debut/types": "^1.0.13",
+        "@types/node": "^15.12.4",
         "@typescript-eslint/eslint-plugin": "^4.27.0",
         "@typescript-eslint/parser": "^4.27.0",
-        "eslint": "^7.28.0",
+        "eslint": "^7.29.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-prettier": "^3.4.0",
         "git-format-staged": "^2.1.2",
@@ -42,7 +42,7 @@
         "pm2": "^5.1.0",
         "prettier": "^2.3.1",
         "tail-file": "^1.4.14",
-        "typescript": "^4.3.2"
+        "typescript": "^4.3.4"
     },
     "husky": {
         "hooks": {
