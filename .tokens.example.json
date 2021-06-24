@@ -1,5 +1,7 @@
 {
     "binance": "YOU_BINANCE_TOKEN",
     "binanceSecret": "YOU_BINANCE_SECRET",
-    "tinkoff": "YOU_TINKOFF_TOKEN"
+    "tinkoff": "YOU_TINKOFF_TOKEN",
+    "alpacaKey": "YOU_ALPACA_KEY",
+    "alpacaSecret": "YOU_ALPACA_SECRET"
 }

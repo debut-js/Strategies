@@ -1,4 +1,4 @@
-import { BinanceTransport, TinkoffTransport } from '@debut/community-core';
+import { BinanceTransport, TinkoffTransport, AlpacaTransport } from '@debut/community-core';
 import { cli } from '@debut/plugin-utils';
 import { DebutOptions, WorkingEnv } from '@debut/types';
 import { SpikesGOptions } from './strategies/spikes-grid/bot';
@@ -7,12 +7,19 @@ import { SpikesGOptions } from './strategies/spikes-grid/bot';
 // Note! The token is required in the ./.tokens.json file
 const binanceTransport = new BinanceTransport();
 // const tinkoffTransport = new TinkoffTransport();
+// const alpacaTransport = new AlpacaTransport();
 
 const getTransport = (cfg: DebutOptions) => {
+    // if (cfg.broker === 'alpaca') {
+    //     return alpacaTransport;
+    // }
+
+    // if (cfg.broker === 'tinkoff') {
+    //     return tinkoffTransport;
+    // }
+
     if (cfg.broker === 'binance') {
         return binanceTransport;
-        // } else {
-        //     return tinkoffTransport;
     }
 };
 
@@ -46,7 +53,7 @@ async function bootstrap() {
     // at $(bootSettings.learnDays)[14] days of history until the current moment
     await bot.learn(bootSettings.learnDays);
 
-    console.log('Bot initialized and learned, starting...');
+    console.log('\nBot initialized and learned, starting...');
 
     // Subscribe to data from the exchange in real time to work
     // Calling the start method, returns the stop function, which, when called,

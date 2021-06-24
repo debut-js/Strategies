@@ -154,6 +154,14 @@ For Binance:
 }
 ```
 
+For Alpaca:
+```json
+{
+    "alpacaKey": "YOU_TOKEN",
+    "alpacaSecret": "YOU_SECRET
+}
+```
+
 You can use any field name for the token, for more details see the [documentation on token settings]() section.
 
 ## Installing npm packages
@@ -256,6 +264,8 @@ pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
 ```
 
 For Binance, parameters launch, you can pass 2: `--btoken=...` `--bsecret=...` if you need to change the name of tokens.
+
+For Alpaca : `--atoken=...` `--asecret=...`
 
 Further, for operation and monitoring, you can use the command set `pm2``
 
