@@ -16,7 +16,7 @@
     "author": "Dmitry Yurov",
     "license": "ISC",
     "dependencies": {
-        "@debut/community-core": "^2.3.0",
+        "@debut/community-core": "^2.3.1",
         "@debut/indicators": "^0.4.6",
         "@debut/plugin-debug": "^1.0.9",
         "@debut/plugin-genetic-shutdown": "^1.0.13",
