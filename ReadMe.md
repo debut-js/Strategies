@@ -136,16 +136,10 @@ To work, you need [NodeJS 14.xx/npm 7.xx](https://nodejs.org/en/) ([installation
 
 ### Obtaining API tokens
 
-[Binance instructions](https://www.binance.com/ru/support/faq/360002502072)
-
-[Tinkoff instructions](https://tinkoffcreditsystems.github.io/invest-openapi/auth)
-
-[Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)
-
 ### Installing tokens
 To work, you need to create a .tokens.json file, add a token to it for work.
 
-For Tinkoff:
+For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openapi/auth)):
 
 ```json
 {
@@ -153,7 +147,7 @@ For Tinkoff:
 }
 ```
 
-For Binance:
+For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)):
 ```json
 {
     "binance": "YOU_TOKEN",
@@ -161,7 +155,7 @@ For Binance:
 }
 ```
 
-For Alpaca:
+For Alpaca ([Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)):
 ```json
 {
     "alpacaKey": "YOU_TOKEN",
