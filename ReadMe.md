@@ -140,6 +140,8 @@ To work, you need [NodeJS 14.xx/npm 7.xx](https://nodejs.org/en/) ([installation
 
 [Tinkoff instructions](https://tinkoffcreditsystems.github.io/invest-openapi/auth)
 
+[Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)
+
 ### Installing tokens
 To work, you need to create a .tokens.json file, add a token to it for work.
 
