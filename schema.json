@@ -8,5 +8,10 @@
         "name": "SpikesG",
         "path": "./out/strategies/spikes-grid/",
         "src": "./src/strategies/spikes-grid/"
+    },
+    {
+        "name": "StochMacd",
+        "path": "./out/strategies/stoch-macd/",
+        "src": "./src/strategies/stoch-macd/"
     }
 ]
