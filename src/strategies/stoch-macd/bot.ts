@@ -111,7 +111,7 @@ export class StochMacd extends Debut {
         this.macdValue = this.macd.nextValue(candle.c);
         this.stochValue = this.stoch.nextValue(candle.h, candle.l, candle.c);
 
-        this.filled = this.filled || (this.macdValue?.signal && this.stochValue?.k);
+        this.filled = this.filled || (this.macdValue?.signal && this.stochValue?.k && prevStochValue?.k);
 
         this.validateMacdSignal();
         this.validateStochSignal();
