@@ -268,12 +268,12 @@ For Binance, parameters launch, you can pass 2: `--btoken=...` `--bsecret=...` i
 
 For Alpaca : `--atoken=...` `--asecret=...`
 
-Further, for operation and monitoring, you can use the command set `pm2``
+Further, for operation and monitoring, you can use `pm2` command:
 
-pm2 list` - a list of active processes
+`pm2 list` - a list of active processes
 
 `pm2 delete $ pid` - stop a process
 
 `pm2 log` - to view the logs of running processes
 
-and other commands, which can be found in the documentation of the process manager
+and other commands, which can be found in the documentation of the process manager.
