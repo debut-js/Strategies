@@ -258,7 +258,7 @@ An example of such a file can be found here `/src/bootstrap.ts`
 pm2 start ./out/bootstrap.js
 ```
 
-To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCusotm": "YOU_API_TOKEN"} `
+To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCustom": "YOU_API_TOKEN"} `
 
 ```bash
 pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
