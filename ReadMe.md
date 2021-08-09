@@ -258,7 +258,7 @@ An example of such a file can be found here `/src/bootstrap.ts`
 pm2 start ./out/bootstrap.js
 ```
 
-To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCusotm": "YOU_API_TOKEN"} `
+To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCustom": "YOU_API_TOKEN"} `
 
 ```bash
 pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
@@ -268,12 +268,12 @@ For Binance, parameters launch, you can pass 2: `--btoken=...` `--bsecret=...` i
 
 For Alpaca : `--atoken=...` `--asecret=...`
 
-Further, for operation and monitoring, you can use the command set `pm2``
+Further, for operation and monitoring, you can use `pm2` command:
 
-pm2 list` - a list of active processes
+`pm2 list` - a list of active processes
 
 `pm2 delete $ pid` - stop a process
 
 `pm2 log` - to view the logs of running processes
 
-and other commands, which can be found in the documentation of the process manager
+and other commands, which can be found in the documentation of the process manager.
