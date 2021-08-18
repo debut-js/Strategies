@@ -22,7 +22,7 @@ Debut is based on the architecture of the core and add-on plugins that allow fle
 ## Community edition
 We believe in the power of the community! That is why we decided to publish the project. The community version is free, but it has some limitations in commercial use (income from trading startups is not commerce), as well as technical differences in testing strategies. Join the community, join **[developer chat](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
 
-## Enterprise edition ($100/mo [buy now!](https://www.patreon.com/bePatron?u=57560983))
+## Enterprise edition ($15/mo [buy now!](https://www.patreon.com/bePatron?u=57560983))
 Enterprise version is a ready-made set of tools for "big guys", for those who are engaged in trade services or create strategies professionally. Everything is here! And this is all ready to work for you and to increase the speed of your development.
 
 <table>
