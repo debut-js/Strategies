@@ -23,7 +23,7 @@
         "@debut/plugin-grid": "^1.0.16",
         "@debut/plugin-reinvest": "^1.0.12",
         "@debut/plugin-report": "^1.1.8",
-        "@debut/plugin-session": "^1.0.14",
+        "@debut/plugin-session": "^1.0.15",
         "@debut/plugin-stats": "^1.0.14",
         "@debut/plugin-utils": "^1.0.15",
         "@debut/plugin-virtual-takes": "^1.0.11"
