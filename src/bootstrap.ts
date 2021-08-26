@@ -27,7 +27,7 @@ const bootSettings = {
     // Choose a strategy
     strategyName: 'SpikesG',
     // Select a ticker, which exists in the cfgs.ts file
-    tickName: 'BTCUSDT',
+    tickName: 'EGLDUSDT',
     // Choose the number of days for training
     learnDays: 14,
 };

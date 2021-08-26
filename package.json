@@ -16,7 +16,7 @@
     "author": "Dmitry Yurov",
     "license": "ISC",
     "dependencies": {
-        "@debut/community-core": "^2.4.6",
+        "@debut/community-core": "^2.4.7-beta.0",
         "@debut/indicators": "^1.0.5",
         "@debut/plugin-debug": "^1.0.10",
         "@debut/plugin-genetic-shutdown": "^1.0.14",
@@ -25,21 +25,21 @@
         "@debut/plugin-report": "^1.1.8",
         "@debut/plugin-session": "^1.0.15",
         "@debut/plugin-stats": "^1.0.14",
-        "@debut/plugin-utils": "^1.0.15",
-        "@debut/plugin-virtual-takes": "^1.0.11"
+        "@debut/plugin-utils": "^1.0.16",
+        "@debut/plugin-virtual-takes": "^1.1.0"
     },
     "devDependencies": {
-        "@debut/types": "^1.0.24",
-        "@types/node": "^16.6.1",
-        "@typescript-eslint/eslint-plugin": "^4.29.2",
-        "@typescript-eslint/parser": "^4.29.2",
+        "@debut/types": "1.0.25-beta.0",
+        "@types/node": "^16.7.2",
+        "@typescript-eslint/eslint-plugin": "^4.29.3",
+        "@typescript-eslint/parser": "^4.29.3",
         "eslint": "^7.32.0",
         "eslint-config-prettier": "^8.3.0",
-        "eslint-plugin-prettier": "^3.4.0",
+        "eslint-plugin-prettier": "^3.4.1",
         "git-format-staged": "^2.1.2",
         "husky": "4.3.8",
         "jest": "^27.0.6",
-        "pm2": "^5.1.0",
+        "pm2": "^5.1.1",
         "prettier": "^2.3.2",
         "tail-file": "^1.4.14",
         "typescript": "^4.3.5"
