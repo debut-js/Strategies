@@ -25,11 +25,11 @@ const getTransport = (cfg: DebutOptions) => {
 
 const bootSettings = {
     // Choose a strategy
-    strategyName: 'SpikesG',
+    strategyName: 'FTBot',
     // Select a ticker, which exists in the cfgs.ts file
     tickName: 'BTCUSDT',
     // Choose the number of days for training
-    learnDays: 14,
+    learnDays: 0,
 };
 
 // Main function for launching a trading strategy
@@ -49,9 +49,11 @@ async function bootstrap() {
     // Create a robot in Production mode
     const bot = await meta.create(getTransport(config), config, WorkingEnv.production);
 
-    // Start prelaunch strategy training, for a smooth transition to combat mode,
-    // at $(bootSettings.learnDays)[14] days of history until the current moment
-    await bot.learn(bootSettings.learnDays);
+    if (bootSettings.learnDays) {
+        // Start prelaunch strategy training, for a smooth transition to combat mode,
+        // at $(bootSettings.learnDays)[14] days of history until the current moment
+        await bot.learn(bootSettings.learnDays);
+    }
 
     console.log('\nBot initialized and learned, starting...');
 
