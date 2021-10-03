@@ -3,7 +3,7 @@ import { BaseTransport, DebutOptions, Depth } from '@debut/types';
 
 export class BuySellMeter extends Debut {
     // 2 seconds
-    private intervalMs = 2000;
+    private intervalMs = 1000;
     private snapshotTime = Date.now() + this.intervalMs;
     private buyState = 0;
     private sellState = 0;

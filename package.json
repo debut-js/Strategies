@@ -16,8 +16,8 @@
     "author": "Dmitry Yurov",
     "license": "ISC",
     "dependencies": {
-        "@debut/community-core": "^2.6.2",
-        "@debut/indicators": "^1.0.5",
+        "@debut/community-core": "^2.6.3",
+        "@debut/indicators": "^1.0.6",
         "@debut/plugin-debug": "^1.0.12",
         "@debut/plugin-genetic-shutdown": "^1.0.16",
         "@debut/plugin-grid": "^1.1.8",
@@ -26,7 +26,8 @@
         "@debut/plugin-session": "^1.0.17",
         "@debut/plugin-stats": "^1.0.16",
         "@debut/plugin-utils": "^1.0.21",
-        "@debut/plugin-virtual-takes": "^1.1.2"
+        "@debut/plugin-virtual-takes": "^1.1.2",
+        "ascii-table": "^0.0.9"
     },
     "devDependencies": {
         "@debut/types": "^1.2.1",
