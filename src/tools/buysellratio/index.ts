@@ -1,14 +1,15 @@
 import { BinanceTransport } from '@debut/community-core';
 import { DebutOptions, OrderType } from '@debut/types';
-import { math } from '@debut/plugin-utils';
+import { cli, math } from '@debut/plugin-utils';
 import { BuySellMeter } from './metrics/buysell';
 import asciichart from 'asciichart';
 import { Trader } from './trader';
 import { CorrelationMeter } from './metrics/correlation';
 import { SMA } from '@debut/indicators';
 
-const transport = new BinanceTransport();
-const traderTransport = new BinanceTransport();
+const { binance, binanceSecret } = cli.getTokens();
+const transport = new BinanceTransport(binance, binanceSecret);
+const traderTransport = new BinanceTransport(binance, binanceSecret);
 const corrs = [];
 const sma = new SMA(12);
 const slowSma = new SMA(40);

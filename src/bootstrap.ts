@@ -5,7 +5,8 @@ import { SpikesGOptions } from './strategies/spikes-grid/bot';
 
 // Create a transport layer for working with a broker
 // Note! The token is required in the ./.tokens.json file
-const binanceTransport = new BinanceTransport();
+const { binance, binanceSecret } = cli.getTokens();
+const binanceTransport = new BinanceTransport(binance, binanceSecret);
 // const tinkoffTransport = new TinkoffTransport();
 // const alpacaTransport = new AlpacaTransport();
 
