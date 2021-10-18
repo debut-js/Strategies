@@ -13,8 +13,8 @@ const traderTransport = new BinanceTransport(binance, binanceSecret);
 const corrs = [];
 const sma = new SMA(12);
 const slowSma = new SMA(40);
-const tickers = ['FTM'];
-const altcoints = ['FTM'];
+const tickers = ['ETH', 'BTC', 'ETC', 'XRP'];
+const altcoins = ['FTM', 'GALA', 'SOL', 'UNI', 'ADA'];
 const currency = 'USDT';
 const baseOpts: DebutOptions = {
     broker: 'binance',
@@ -165,7 +165,7 @@ async function main() {
         const meter = new BuySellMeter(transport, cfg, callback);
     });
 
-    altcoints.forEach((ticker) => {
+    altcoins.forEach((ticker) => {
         const cfg = { ...baseOpts, ticker: ticker + currency };
         const meter = new CorrelationMeter(transport, cfg);
         meter.start();
