@@ -6,6 +6,7 @@ import asciichart from 'asciichart';
 import { Trader } from './trader';
 import { CorrelationMeter } from './metrics/correlation';
 import { SMA } from '@debut/indicators';
+import readline from 'readline';
 
 const { binance, binanceSecret } = cli.getTokens();
 const transport = new BinanceTransport(binance, binanceSecret);
@@ -47,8 +48,8 @@ const traderOpts: DebutOptions = { ...baseOpts, ticker: 'FTMUSDT', sandbox: true
 const trader = new Trader(traderTransport, traderOpts, logOrder);
 
 const print = (string: string) => {
-    process.stdout.cursorTo(0, 0);
-    process.stdout.clearScreenDown();
+    readline.cursorTo(process.stdout, 0);
+    readline.clearScreenDown(process.stdout);
     process.stdout.write(string + '\n');
 };
 
