@@ -1,6 +1,7 @@
 import { SpikesGOptions } from './bot';
 
 export const BTCUSDT: SpikesGOptions = {
+    instrumentType: 'MARGIN',
     broker: 'binance',
     ticker: 'BTCUSDT',
     currency: 'USDT',
@@ -19,13 +20,13 @@ export const BTCUSDT: SpikesGOptions = {
     bandsDev: 3.33,
     usePeaks: true,
     buyOnly: false,
-    margin: true,
     useClose: false,
     id: 4,
     lotsMultiplier: 1,
 };
 
 export const FILUSDT: SpikesGOptions = {
+    instrumentType: 'MARGIN',
     broker: 'binance',
     ticker: 'FILUSDT',
     currency: 'USDT',
@@ -44,6 +45,5 @@ export const FILUSDT: SpikesGOptions = {
     bandsDev: 2.03,
     usePeaks: true,
     buyOnly: false,
-    margin: true,
     useClose: false,
 };

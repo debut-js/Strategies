@@ -1,6 +1,7 @@
 import { FTOptions } from './bot';
 
 export const TSLA: FTOptions = {
+    instrumentType: 'MARGIN',
     broker: 'tinkoff',
     ticker: 'TSLA',
     currency: 'USDT',
@@ -13,11 +14,11 @@ export const TSLA: FTOptions = {
     slowPeriod: 18,
     openPercent: 1.62,
     fee: 0.1,
-    margin: true,
     id: 25,
 };
 
 export const QTUMUSDT: FTOptions = {
+    instrumentType: 'MARGIN',
     broker: 'binance',
     ticker: 'QTUMUSDT',
     currency: 'USDT',
@@ -30,6 +31,5 @@ export const QTUMUSDT: FTOptions = {
     slowPeriod: 168,
     openPercent: 4.97,
     fee: 0.1,
-    margin: true,
     id: 29,
 };
