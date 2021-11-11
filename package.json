@@ -16,8 +16,8 @@
     "author": "Dmitry Yurov",
     "license": "ISC",
     "dependencies": {
-        "@debut/community-core": "^2.7.3",
-        "@debut/indicators": "^1.1.0",
+        "@debut/community-core": "^2.7.5",
+        "@debut/indicators": "^1.2.0",
         "@debut/plugin-debug": "^1.0.14",
         "@debut/plugin-genetic-shutdown": "^1.0.18",
         "@debut/plugin-grid": "^1.1.14",
@@ -30,7 +30,7 @@
         "ascii-table": "^0.0.9"
     },
     "devDependencies": {
-        "@debut/types": "^2.0.0",
+        "@debut/types": "^2.0.3",
         "@types/node": "^16.11.7",
         "@typescript-eslint/eslint-plugin": "^5.3.1",
         "@typescript-eslint/parser": "^5.3.1",
