@@ -26,8 +26,7 @@
         "@debut/plugin-session": "^1.0.20",
         "@debut/plugin-stats": "^1.1.3",
         "@debut/plugin-utils": "^1.1.3",
-        "@debut/plugin-virtual-takes": "^1.1.5",
-        "ascii-table": "^0.0.9"
+        "@debut/plugin-virtual-takes": "^1.1.5"
     },
     "devDependencies": {
         "@debut/types": "^2.0.5",
