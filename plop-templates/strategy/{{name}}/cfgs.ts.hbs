@@ -1,0 +1,21 @@
+import { {{name}}Options } from './bot';
+
+export const TSLA: {{name}}Options = {
+    instrumentType: 'MARGIN',
+    broker: 'tinkoff',
+    ticker: 'TSLA',
+    currency: 'USD',
+    interval: '15min',
+    amount: 500,
+    fee: 0.1,
+};
+
+export const QTUMUSDT: {{name}}Options = {
+    instrumentType: 'MARGIN',
+    broker: 'binance',
+    ticker: 'QTUMUSDT',
+    currency: 'USDT',
+    interval: '15min',
+    amount: 500,
+    fee: 0.1,
+};
