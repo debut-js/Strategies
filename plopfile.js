@@ -3,7 +3,7 @@ const templates = './plop-templates';
 
 module.exports = function (plop) {
     plop.setGenerator('strategy', {
-        description: 'Create new react component with styles',
+        description: 'Create new strategy',
         prompts: [
             {
                 type: 'input',
