@@ -1,0 +1,49 @@
+import { SessionPluginOptions, sessionPlugin } from '@debut/plugin-session';
+import { ReportPluginAPI, IndicatorsSchema } from '@debut/plugin-report';
+import { statsPlugin, StatsPluginAPI } from '@debut/plugin-stats';
+import { ShutdownPluginAPI } from '@debut/plugin-genetic-shutdown';
+import { Debut } from '@debut/community-core';
+import { DebutOptions, BaseTransport, Candle } from '@debut/types';
+
+export interface {{name}}Options extends DebutOptions, SessionPluginOptions {
+
+}
+
+export class {{name}} extends Debut {
+    declare opts: {{name}}Options;
+    declare plugins: StatsPluginAPI & ReportPluginAPI & ShutdownPluginAPI;
+
+    constructor(transport: BaseTransport, opts: {{name}}Options) {
+        super(transport, opts);
+
+        this.registerPlugins([
+            this.opts.from && this.opts.to && sessionPlugin(this.opts),
+            statsPlugin(this.opts),
+        ]);
+    }
+
+    public getIndicators = (): IndicatorsSchema => {
+        return [
+            {
+                name: 'figure',
+                figures: [
+                    {
+                        name: 'value',
+                        getValue: () => {
+                            return 0;
+                        },
+                    },
+                ],
+                inChart: false,
+            },
+        ];
+    };
+
+    async onCandle(candle: Candle) {
+
+    }
+
+    async onTick(tick: Candle) {
+
+    }
+}

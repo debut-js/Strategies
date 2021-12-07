@@ -131,23 +131,23 @@ For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openap
 
 ```json
 {
-    "tinkoff":" YOU_TOKEN"
+    "tinkoff": "YOUR_TOKEN"
 }
 ```
 
 For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)):
 ```json
 {
-    "binance": "YOU_TOKEN",
-    "binanceSecret": "YOU_SECRET
+    "binance": "YOUR_TOKEN",
+    "binanceSecret": "YOUR_SECRET"
 }
 ```
 
 For Alpaca ([Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)):
 ```json
 {
-    "alpacaKey": "YOU_TOKEN",
-    "alpacaSecret": "YOU_SECRET
+    "alpacaKey": "YOUR_TOKEN",
+    "alpacaSecret": "YOUR_SECRET"
 }
 ```
 All tokens can be getted by call: `cli.getTokens()` also you can use any field name for the token.
@@ -156,6 +156,12 @@ All tokens can be getted by call: `cli.getTokens()` also you can use any field n
 To install packages, run:
 ```bash
 npm install
+```
+
+## Creating strategy
+Command will create strategy in src/strategies direction with bot.ts, cfgs.ts and meta.ts files inside and add it to schema.json
+```bash
+npm run plop StrategyName
 ```
 
 ## Build the project
