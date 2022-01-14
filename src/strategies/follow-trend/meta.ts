@@ -1,16 +1,15 @@
-import { geneticShutdownPlugin } from '@debut/plugin-genetic-shutdown';
 import { reportPlugin } from '@debut/plugin-report';
 import { debugPlugin } from '@debut/plugin-debug';
 import { createSessionValidator } from '@debut/plugin-session';
 import { FTBot, FTOptions } from './bot';
 import { BaseTransport, DebutMeta, GeneticSchema, WorkingEnv } from '@debut/types';
 
-export const parameters = {
+export const parameters: GeneticSchema<FTOptions> = {
     stopLoss: { min: 0.2, max: 9 },
     takeProfit: { min: 0.2, max: 9 },
     openPercent: { min: 1, max: 15 },
-    fastSMAPeriod: { min: 2, max: 30, int: true },
-    slowSMAPeriod: { min: 10, max: 30, int: true },
+    fastPeriod: { min: 2, max: 100, int: true },
+    slowPeriod: { min: 10, max: 100, int: true },
 };
 
 const meta: DebutMeta = {
@@ -18,10 +17,6 @@ const meta: DebutMeta = {
 
     score(bot: FTBot) {
         const report = bot.plugins.stats.report();
-
-        if (bot.plugins.shutdown && bot.plugins.shutdown.isShutdown()) {
-            return 0;
-        }
 
         return report.expectation;
     },
@@ -33,9 +28,9 @@ const meta: DebutMeta = {
     async create(transport: BaseTransport, cfg: FTOptions, env: WorkingEnv) {
         const bot = new FTBot(transport, cfg);
 
-        // Специфичные плагины окружения
+        // Environments plugins
         if (env === WorkingEnv.genetic) {
-            bot.registerPlugins([geneticShutdownPlugin(cfg.interval)]);
+            // nothing here
         } else if (env === WorkingEnv.tester) {
             bot.registerPlugins([reportPlugin(false)]);
             bot.plugins.report.addIndicators(bot.getIndicators());

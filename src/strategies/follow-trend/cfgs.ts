@@ -17,19 +17,21 @@ export const TSLA: FTOptions = {
     id: 25,
 };
 
-export const QTUMUSDT: FTOptions = {
+export const BTCUSDT: FTOptions = {
     instrumentType: 'MARGIN',
+    fee: 0.1,
+    lotsMultiplier: 1,
+    equityLevel: 1,
     broker: 'binance',
-    ticker: 'QTUMUSDT',
+    ticker: 'BTCUSDT',
     currency: 'USDT',
     interval: '15min',
-    stopLoss: 3.88,
-    takeProfit: 2.66,
+    stopLoss: 4.19,
+    takeProfit: 3.99,
     trailing: false,
-    amount: 500,
-    fastPeriod: 17,
-    slowPeriod: 168,
-    openPercent: 4.97,
-    fee: 0.1,
-    id: 29,
+    amount: 10000,
+    fastPeriod: 21,
+    slowPeriod: 91,
+    openPercent: 8.78,
+    id: 4,
 };
