@@ -1,0 +1,61 @@
+import { geneticShutdownPlugin } from '@debut/plugin-genetic-shutdown';
+import { reportPlugin } from '@debut/plugin-report';
+import { debugPlugin } from '@debut/plugin-debug';
+import { createSessionValidator } from '@debut/plugin-session';
+import { {{name}}, {{name}}Options } from './bot';
+import { BaseTransport, DebutMeta, WorkingEnv } from '@debut/types';
+
+export const parameters = {
+
+};
+
+const meta: DebutMeta = {
+    parameters,
+
+    score(bot: {{name}}) {
+        const report = bot.plugins.stats.report();
+
+        if (bot.plugins.shutdown && bot.plugins.shutdown.isShutdown()) {
+            return 0;
+        }
+
+        return report.expectation;
+    },
+
+    stats(bot: {{name}}) {
+        return bot.plugins.stats.report();
+    },
+
+    async create(transport: BaseTransport, cfg: {{name}}Options, env: WorkingEnv) {
+        const bot = new {{name}}(transport, cfg);
+
+        if (env === WorkingEnv.genetic) {
+            bot.registerPlugins([geneticShutdownPlugin(cfg.interval)]);
+        } else if (env === WorkingEnv.tester) {
+            bot.registerPlugins([reportPlugin(false)]);
+            bot.plugins.report.addIndicators(bot.getIndicators());
+        } else if (env === WorkingEnv.production) {
+            bot.registerPlugins([debugPlugin()]);
+        }
+
+        return bot;
+    },
+
+    ticksFilter(cfg: {{name}}Options) {
+        if (!cfg.from && !cfg.to) {
+            return () => true;
+        }
+
+        const tickValidator = createSessionValidator(cfg.from, cfg.to, cfg.noTimeSwitching);
+
+        return (tick) => {
+            return tickValidator(tick.time).inSession;
+        };
+    },
+
+    validate(cfg: {{name}}Options) {
+        return cfg;
+    },
+};
+
+export default meta;
