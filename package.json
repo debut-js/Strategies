@@ -18,7 +18,7 @@
     "license": "ISC",
     "dependencies": {
         "@debut/community-core": "^3.0.7",
-        "@debut/indicators": "^1.3.0",
+        "@debut/indicators": "^1.3.1",
         "@debut/plugin-debug": "^1.1.0",
         "@debut/plugin-genetic-shutdown": "^1.1.0",
         "@debut/plugin-grid": "^1.3.0",
