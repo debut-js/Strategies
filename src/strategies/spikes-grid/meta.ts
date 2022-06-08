@@ -12,7 +12,7 @@ const parameters: GeneticSchema<SpikesGOptions> = {
     step: { min: 0.5, max: 12 },
     levelsCount: { min: 3, max: 8, int: true },
     martingale: { min: 1, max: 2 },
-    fibo: { bool: true },
+    fibo: { min: 0, max: 2 },
     usePeaks: { bool: true },
     bandsPeriod: { min: 10, max: 80, int: true },
     barsTrend: { min: 10, max: 60, int: true },
