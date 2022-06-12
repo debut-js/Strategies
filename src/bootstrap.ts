@@ -37,7 +37,7 @@ const bootSettings = {
 async function bootstrap() {
     // Request meta information to create a bot based on the SpikesG strategy, by its name in the schema.json file
     // And also available strategy configurations from cfgs.ts files
-    const { meta, configs }: cli.BotData = cli.getBotData(bootSettings.strategyName);
+    const { meta, configs }: cli.BotData = await cli.getBotData(bootSettings.strategyName);
 
     // If the configuration does not exist, throw it away
     if (!configs[bootSettings.tickName]) {
