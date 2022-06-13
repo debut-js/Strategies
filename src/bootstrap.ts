@@ -1,26 +1,37 @@
 import { BinanceTransport, TinkoffTransport, AlpacaTransport } from '@debut/community-core';
 import { cli } from '@debut/plugin-utils';
-import { DebutOptions, WorkingEnv } from '@debut/types';
+import { BaseTransport, DebutOptions, WorkingEnv } from '@debut/types';
 import { SpikesGOptions } from './strategies/spikes-grid/bot';
 
 // Create a transport layer for working with a broker
 // Note! The token is required in the ./.tokens.json file
-const { binance, binanceSecret } = cli.getTokens();
-const binanceTransport = new BinanceTransport(binance, binanceSecret);
-// const tinkoffTransport = new TinkoffTransport();
-// const alpacaTransport = new AlpacaTransport();
+const { binance, binanceSecret, tinkoff, tinkoffAccountId, alpacaKey, alpacaSecret } = cli.getTokens();
+
+const transportCache: Map<string, BaseTransport> = new Map();
+
+// Tinkoff get accounts list example
+// tinkoffTransport['api'].users.getAccounts({}).then(res => {
+//     console.log(res);
+// });
 
 const getTransport = (cfg: DebutOptions) => {
-    // if (cfg.broker === 'alpaca') {
-    //     return alpacaTransport;
-    // }
+    let transport = transportCache.get(cfg.broker);
 
-    // if (cfg.broker === 'tinkoff') {
-    //     return tinkoffTransport;
-    // }
+    if (!transport) {
+        transport = createTransport(cfg.broker);
+        transportCache.set(cfg.broker, transport);
+    }
 
-    if (cfg.broker === 'binance') {
-        return binanceTransport;
+    return transport;
+};
+
+const createTransport = (broker: string) => {
+    if (broker === 'binance') {
+        return new BinanceTransport(binance, binanceSecret);
+    } else if (broker === 'tinkoff') {
+        return new TinkoffTransport(tinkoff, tinkoffAccountId);
+    } else if (broker === 'alpaca') {
+        return new AlpacaTransport(alpacaKey, alpacaSecret);
     }
 };
 

@@ -1,11 +1,10 @@
 import { FTOptions } from './bot';
 
 export const TSLA: FTOptions = {
-    instrumentType: 'MARGIN',
     broker: 'tinkoff',
     ticker: 'TSLA',
-    currency: 'USDT',
-    interval: '15min',
+    currency: 'USD',
+    interval: '1min',
     stopLoss: 3.75,
     takeProfit: 4.63,
     amount: 500,
