@@ -131,8 +131,16 @@ For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openap
 
 ```json
 {
-    "tinkoff": "YOUR_TOKEN"
+    "tinkoff": "YOUR_TOKEN",
+    "tinkoffAccountId": "YOUR_ACCOUNT_ID",
 }
+
+Get your tinkoff accounts by this hack and copy one of available account identity to `tinkoffAccountId`:
+
+```javascript
+tinkoffTransport.api.users.getAccounts({}).then(res => {
+    console.log(res);
+});
 ```
 
 For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)):
