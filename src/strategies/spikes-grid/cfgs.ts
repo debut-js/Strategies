@@ -1,9 +1,12 @@
 import { SpikesGOptions } from './bot';
 
-export const EGLDUSDT: SpikesGOptions = {
-    instrumentType: 'FUTURES',
+export const BTCUSDT: SpikesGOptions = {
+    instrumentType: 'MARGIN',
+    fee: 0.1,
+    lotsMultiplier: 1,
+    equityLevel: 1,
     broker: 'binance',
-    ticker: 'EGLDUSDT',
+    ticker: 'BTCUSDT',
     currency: 'USDT',
     interval: '15min',
     amount: 500,

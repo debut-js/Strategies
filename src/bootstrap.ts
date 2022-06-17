@@ -39,7 +39,7 @@ const bootSettings = {
     // Choose a strategy
     strategyName: 'FTBot',
     // Select a ticker, which exists in the cfgs.ts file
-    tickName: 'EGLDUSDT',
+    tickName: 'BTCUSDT',
     // Choose the number of days for training
     learnDays: 0,
 };

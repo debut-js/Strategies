@@ -108,7 +108,6 @@ export class SpikesG extends Debut {
 
     async onCandle(candle: Candle) {
         if (!this.prevCandle) {
-            console.log(this.instrument);
             return;
         }
 

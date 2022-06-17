@@ -208,7 +208,13 @@ You can read more about the test run parameters in the [documentation](https://d
 Run the command:
 
 ```bash
-npm run genetic -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
+npm run genetic -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000
+```
+
+or with gap 60 days from now, and WFO enabled with type `rolling` also available `--wfo` default type is 'anchored' wfo
+
+```bash
+npm run genetic -- --ticker=BTCUSDT --bot=FTBot --amount=500 --gen=25 --pop=10000 --days=300 --gap=60 --wfo=rolling
 ```
 
 More details about the launch parameters of the genetics can be found in the [documentation](https://debutjs.io/)
