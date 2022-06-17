@@ -3,7 +3,7 @@ import { reinvestPlugin } from '@debut/plugin-reinvest';
 import { ReportPluginAPI, IndicatorsSchema } from '@debut/plugin-report';
 import { statsPlugin, StatsPluginAPI } from '@debut/plugin-stats';
 import { ShutdownPluginAPI } from '@debut/plugin-genetic-shutdown';
-import { gridPlugin, GridPluginOptions } from '@debut/plugin-grid';
+import { gridPlugin, GridPluginOptions, Grid, GridPluginAPI } from '@debut/plugin-grid';
 import { BollingerBands } from '@debut/indicators';
 import { DebutOptions, Candle, BaseTransport, OrderType } from '@debut/types';
 import { Debut } from '@debut/community-core';
@@ -23,7 +23,7 @@ type BBands = { middle: number; upper: number; lower: number };
 
 export class SpikesG extends Debut {
     declare opts: SpikesGOptions;
-    declare plugins: StatsPluginAPI & ReportPluginAPI & ShutdownPluginAPI;
+    declare plugins: StatsPluginAPI & ReportPluginAPI & ShutdownPluginAPI & GridPluginAPI;
     private bands: BollingerBands;
     private bandsValue: BBands;
     private events = '';
@@ -32,6 +32,7 @@ export class SpikesG extends Debut {
     private barsWithoutBottom = 0;
     private barsWithoutTop = 0;
     private expirationBars = 0;
+    private grid: Grid;
 
     constructor(transport: BaseTransport, opts: SpikesGOptions) {
         super(transport, opts);
@@ -54,7 +55,12 @@ export class SpikesG extends Debut {
     }
 
     public getIndicators = (): IndicatorsSchema => {
-        return [
+        const schema: IndicatorsSchema = [
+            {
+                name: 'grid',
+                figures: [],
+                inChart: true,
+            },
             {
                 name: 'bbands',
                 figures: [
@@ -80,6 +86,24 @@ export class SpikesG extends Debut {
                 inChart: true,
             },
         ];
+
+        for (let i = 0; i < this.opts.levelsCount; i++) {
+            schema[0].figures.push({
+                name: `uplevel-${i}`,
+                getValue: () => {
+                    return this.grid?.upLevels[i]?.price;
+                },
+            });
+
+            schema[0].figures.push({
+                name: `lowlevel-${i}`,
+                getValue: () => {
+                    return this.grid?.lowLevels[i]?.price;
+                },
+            });
+        }
+
+        return schema;
     };
 
     async onCandle(candle: Candle) {
@@ -88,6 +112,7 @@ export class SpikesG extends Debut {
             return;
         }
 
+        this.grid = this.plugins.grid.getGrid();
         this.bandsValue = this.bands.nextValue(candle.c);
 
         if (!this.bandsValue) {

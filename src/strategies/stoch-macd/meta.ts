@@ -1,4 +1,4 @@
-import { BaseTransport, DebutMeta, GeneticSchema, TestingPhase, WorkingEnv } from '@debut/types';
+import { BaseTransport, DebutMeta, GeneticSchema, WorkingEnv } from '@debut/types';
 import { StochMacdOptions, StochMacd } from './bot';
 import { reportPlugin } from '@debut/plugin-report';
 
@@ -27,18 +27,10 @@ const create = async (transport: BaseTransport, cfg: StochMacdOptions, env: Work
 
     return bot;
 };
-const score = (bot: StochMacd, phase?: TestingPhase) => {
-    let score = bot.plugins.stats.report().expectation || 0;
+const score = (bot: StochMacd) => {
+    const score = bot.plugins.stats.report().expectation || 0;
 
-    if (phase === TestingPhase.before) {
-        score *= 1.5;
-        bot.plugins.stats.cleanup();
-    } else if (phase === TestingPhase.main) {
-        bot.plugins.stats.cleanup();
-    } else if (phase === TestingPhase.after) {
-        bot.plugins.stats.cleanup();
-        score *= 2;
-    }
+    bot.plugins.stats.cleanup();
 
     return score;
 };

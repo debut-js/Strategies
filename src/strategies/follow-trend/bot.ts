@@ -3,7 +3,6 @@ import { SessionPluginOptions, sessionPlugin } from '@debut/plugin-session';
 import { VirtualTakesOptions, virtualTakesPlugin } from '@debut/plugin-virtual-takes';
 import { ReportPluginAPI, IndicatorsSchema } from '@debut/plugin-report';
 import { statsPlugin, StatsPluginAPI } from '@debut/plugin-stats';
-import { ShutdownPluginAPI } from '@debut/plugin-genetic-shutdown';
 import { Debut } from '@debut/community-core';
 import { math } from '@debut/plugin-utils';
 import { DebutOptions, BaseTransport, OrderType, Candle } from '@debut/types';
@@ -15,7 +14,7 @@ export interface FTOptions extends DebutOptions, SessionPluginOptions, VirtualTa
 }
 export class FTBot extends Debut {
     declare opts: FTOptions;
-    declare plugins: StatsPluginAPI & ReportPluginAPI & ShutdownPluginAPI;
+    declare plugins: StatsPluginAPI & ReportPluginAPI;
 
     private sma: SMA;
     private slowSMA: SMA;

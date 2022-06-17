@@ -23,7 +23,13 @@ Debut is based on the architecture of the core and add-on plugins that allow fle
 We believe in the power of the community! That is why we decided to publish the project. The community version is free, but it has some limitations in commercial use (income from trading startups is not commerce), as well as technical differences in testing strategies. Join the community, join **[developer chat](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
 
 ## Enterprise edition ($15/mo [buy now!](https://www.patreon.com/bePatron?u=57560983))
-Enterprise version is a ready-made set of tools for "big guys", for those who are engaged in trade services or create strategies professionally. Everything is here! And this is all ready to work for you and to increase the speed of your development.
+The Enterprise version is a fully functional version of Debut, with a maximum of possibilities for emulating real market behavior.
+
+Aggregation of candles:
+All candles are aggregated from incoming data from shorter time periods. This allows you to get access to any timeframe on the fly with only 1 candle stream real by subscription. So you can get daily candles from 15 minute ones.
+
+Tick ​​emulation:
+On the basis of candlestick aggregation, a mechanism for filling candles of any timeframe from OHLC / OLHC ticks of 1-minute candles has been created. This allows you to create more than 60 price ticks in one 15-minute interval or 240 ticks inside each 1 hour candle.
 
 <table>
 <thead>
@@ -71,21 +77,6 @@ Enterprise version is a ready-made set of tools for "big guys", for those who ar
 </tr>
 </tbody> </table>
 
-## Personal edition
-*Have no strategies from out of the box.*
-
-- Enterprise core inside!
-- Report with order screenshots and stats in to you messenger direct
-- Money management formula for strategy equity auto calculation
-- Fast genetic result analyser and viewer
-- Private chat support
-- Ready to start on VPS/VDS or cloud
-- Dashboard* [still in progress]
-
-## Business edition
-- Multiple tokens for easy client connection (signals for sale to you clients)
-- Legal use Debut for business
-
 ## Strategy Import from TradingView ($1000 [buy now!](https://www.patreon.com/bePatron?u=57560983))
 If you need help transferring a strategy from TradingView to the Debut ecosystem. Transferring a strategy takes up to 3 business days. You can also request to create a strategy based on an article or your own formula.
 
@@ -95,9 +86,6 @@ We are streaming Enterprise-based deals live on our [telegram channel](https://t
 
 **Remember!** Starting a bot and trading in general requires careful study of the associated risks and parameters.
 Incorrect settings can cause serious financial losses.
-
-
-
 
 The project has two starting trading strategies "For example" how to work with the system.
 
@@ -143,32 +131,45 @@ For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openap
 
 ```json
 {
-    "tinkoff":" YOU_TOKEN"
+    "tinkoff": "YOUR_TOKEN",
+    "tinkoffAccountId": "YOUR_ACCOUNT_ID",
 }
+
+Get your tinkoff accounts by this hack and copy one of available account identity to `tinkoffAccountId`:
+
+```javascript
+tinkoffTransport.api.users.getAccounts({}).then(res => {
+    console.log(res);
+});
 ```
 
 For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)):
 ```json
 {
-    "binance": "YOU_TOKEN",
-    "binanceSecret": "YOU_SECRET
+    "binance": "YOUR_TOKEN",
+    "binanceSecret": "YOUR_SECRET"
 }
 ```
 
 For Alpaca ([Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)):
 ```json
 {
-    "alpacaKey": "YOU_TOKEN",
-    "alpacaSecret": "YOU_SECRET
+    "alpacaKey": "YOUR_TOKEN",
+    "alpacaSecret": "YOUR_SECRET"
 }
 ```
-
-You can use any field name for the token, for more details see the [documentation on token settings]() section.
+All tokens can be getted by call: `cli.getTokens()` also you can use any field name for the token.
 
 ## Installing npm packages
 To install packages, run:
 ```bash
 npm install
+```
+
+## Creating strategy
+Command will create strategy in src/strategies direction with bot.ts, cfgs.ts and meta.ts files inside and add it to schema.json
+```bash
+npm run plop StrategyName
 ```
 
 ## Build the project
@@ -258,16 +259,6 @@ An example of such a file can be found here `/src/bootstrap.ts`
 pm2 start ./out/bootstrap.js
 ```
 
-To customize the token name in the `.tokens.json` file, you can also pass the launch parameter in the file `.tokens.json` write a token in this format:` {"tinkoffCustom": "YOU_API_TOKEN"} `
-
-```bash
-pm2 start ./out/bootstrap.js -- --token=tinkoffCustom
-```
-
-For Binance, parameters launch, you can pass 2: `--btoken=...` `--bsecret=...` if you need to change the name of tokens.
-
-For Alpaca : `--atoken=...` `--asecret=...`
-
 Further, for operation and monitoring, you can use `pm2` command:
 
 `pm2 list` - a list of active processes
@@ -277,3 +268,17 @@ Further, for operation and monitoring, you can use `pm2` command:
 `pm2 log` - to view the logs of running processes
 
 and other commands, which can be found in the documentation of the process manager.
+
+# Debut is flexible for any tools
+
+## Buy / Sell ratio
+
+A measure of the activity rating of buyers and sellers for several pairs. This tool is based on the method of counting all purchases listed on the exchange and all sales, they are calculated for several large tokens dominating the market. Parameter `tickers` = ['ETH', 'BTC', 'ETC', 'XRP']; A fast and slow moving average (SMA) is used to smooth and track changes in activity. Further, for less voluminous tokens (altcoins), the correlation between the change in their price and the change in the buyer's index is calculated. Deals are formed for a certain coin according to the simple logic that if the buyer's activity is above 50% and the price correlation is high, or the share of buyers is less than 50% and the price correlation is high (falling).
+
+#### Start
+```bash
+npm run compile && node ./tools/buysellratio/index.js
+```
+
+### Screenshot
+![preview](.github/workflows/bsratio.png)

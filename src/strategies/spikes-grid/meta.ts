@@ -8,12 +8,11 @@ import { GeneticSchema, DebutMeta, BaseTransport, WorkingEnv } from '@debut/type
 import { StatsPluginAPI } from '@debut/plugin-stats';
 
 const parameters: GeneticSchema<SpikesGOptions> = {
-    // stopLoss: { min: 10, max: 30 },
-    takeProfit: { min: 1.5, max: 10 }, // меньше 1.5 грид будет закрываться в - изза скользяка
+    takeProfit: { min: 1.5, max: 10 },
     step: { min: 0.5, max: 12 },
-    // levelsCount: { min: 1, max: 2, int: true },
+    levelsCount: { min: 3, max: 8, int: true },
     martingale: { min: 1, max: 2 },
-    // fibo: { bool: true },
+    fibo: { min: 0, max: 2 },
     usePeaks: { bool: true },
     bandsPeriod: { min: 10, max: 80, int: true },
     barsTrend: { min: 10, max: 60, int: true },

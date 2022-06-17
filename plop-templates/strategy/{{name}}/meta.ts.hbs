@@ -1,36 +1,36 @@
+import { geneticShutdownPlugin } from '@debut/plugin-genetic-shutdown';
 import { reportPlugin } from '@debut/plugin-report';
 import { debugPlugin } from '@debut/plugin-debug';
 import { createSessionValidator } from '@debut/plugin-session';
-import { FTBot, FTOptions } from './bot';
-import { BaseTransport, DebutMeta, GeneticSchema, WorkingEnv } from '@debut/types';
+import { {{name}}, {{name}}Options } from './bot';
+import { BaseTransport, DebutMeta, WorkingEnv } from '@debut/types';
 
-export const parameters: GeneticSchema<FTOptions> = {
-    stopLoss: { min: 0.2, max: 9 },
-    takeProfit: { min: 0.2, max: 9 },
-    openPercent: { min: 1, max: 15 },
-    fastPeriod: { min: 2, max: 100, int: true },
-    slowPeriod: { min: 10, max: 100, int: true },
+export const parameters = {
+
 };
 
 const meta: DebutMeta = {
     parameters,
 
-    score(bot: FTBot) {
+    score(bot: {{name}}) {
         const report = bot.plugins.stats.report();
+
+        if (bot.plugins.shutdown && bot.plugins.shutdown.isShutdown()) {
+            return 0;
+        }
 
         return report.expectation;
     },
 
-    stats(bot: FTBot) {
+    stats(bot: {{name}}) {
         return bot.plugins.stats.report();
     },
 
-    async create(transport: BaseTransport, cfg: FTOptions, env: WorkingEnv) {
-        const bot = new FTBot(transport, cfg);
+    async create(transport: BaseTransport, cfg: {{name}}Options, env: WorkingEnv) {
+        const bot = new {{name}}(transport, cfg);
 
-        // Environments plugins
         if (env === WorkingEnv.genetic) {
-            // nothing here
+            bot.registerPlugins([geneticShutdownPlugin(cfg.interval)]);
         } else if (env === WorkingEnv.tester) {
             bot.registerPlugins([reportPlugin(false)]);
             bot.plugins.report.addIndicators(bot.getIndicators());
@@ -41,7 +41,7 @@ const meta: DebutMeta = {
         return bot;
     },
 
-    ticksFilter(cfg: FTOptions) {
+    ticksFilter(cfg: {{name}}Options) {
         if (!cfg.from && !cfg.to) {
             return () => true;
         }
@@ -53,11 +53,7 @@ const meta: DebutMeta = {
         };
     },
 
-    validate(cfg: FTOptions) {
-        if (cfg.fastPeriod > cfg.slowPeriod) {
-            return false;
-        }
-
+    validate(cfg: {{name}}Options) {
         return cfg;
     },
 };
