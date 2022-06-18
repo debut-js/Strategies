@@ -10,7 +10,7 @@ const { binance, binanceSecret, tinkoff, tinkoffAccountId, alpacaKey, alpacaSecr
 const transportCache: Map<string, BaseTransport> = new Map();
 
 // Tinkoff get accounts list example
-// tinkoffTransport['api'].users.getAccounts({}).then(res => {
+// tinkoffTransport.api.users.getAccounts({}).then(res => {
 //     console.log(res);
 // });
 
