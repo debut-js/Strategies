@@ -13,5 +13,10 @@
         "name": "StochMacd",
         "path": "./out/strategies/stoch-macd/",
         "src": "./src/strategies/stoch-macd/"
+    },
+    {
+        "name": "CCIDynamic",
+        "path": "./out/strategies/cci-dynamic/",
+        "src": "./src/strategies/cci-dynamic/"
     }
 ]
