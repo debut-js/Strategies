@@ -12,7 +12,8 @@
         "genetic": "genetic --",
         "finder": "finder --",
         "testing": "tester --",
-        "debug": "npm run compile && npm run testing -- --ticker=BTCUSDT --bot=SpikesG --days=40"
+        "debug": "npm run compile && npm run testing -- --ticker=BTCUSDT --bot=SpikesG --days=40",
+        "getAccountId": "tsc && node out/tools/getAccountId.js"
     },
     "author": "Dmitry Yurov",
     "license": "ISC",
