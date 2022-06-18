@@ -30,8 +30,7 @@
         "@debut/plugin-session": "^1.3.0-beta.1",
         "@debut/plugin-stats": "^1.4.0-beta.1",
         "@debut/plugin-utils": "^1.4.0-beta.1",
-        "@debut/plugin-virtual-takes": "^1.4.0-beta.1",
-        "ts-node": "^10.8.1"
+        "@debut/plugin-virtual-takes": "^1.4.0-beta.1"
     },
     "devDependencies": {
         "@debut/types": "^3.2.0-beta.0",
@@ -49,7 +48,8 @@
         "pm2": "^5.2.0",
         "prettier": "^2.6.2",
         "tail-file": "^1.4.15",
-        "typescript": "^4.7.3"
+        "typescript": "^4.7.3",
+        "ts-node": "^10.8.1"
     },
     "husky": {
         "hooks": {
