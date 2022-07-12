@@ -6,7 +6,7 @@
 [![Telegram stocks trading orders stream](https://badgen.net/badge/tg/stocks:stream/cyan?icon=telegram)](https://t.me/debutjs2)
 
 <p align="center">
-  <img src="./.github/logo-small.png" />
+  <img src="./.github/logo-small" />
 </p>
 
 
