@@ -7,7 +7,7 @@
         "compile": "tsc",
         "start": "ts-node --",
         "serve": "report-serve",
-        "plop": "plop",
+        "create": "plop",
         "prettier": "prettier --config .prettierrc --write src/**/*.ts",
         "genetic": "genetic --",
         "finder": "finder --",
