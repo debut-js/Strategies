@@ -2,6 +2,7 @@
     "binance": "YOU_BINANCE_TOKEN",
     "binanceSecret": "YOU_BINANCE_SECRET",
     "tinkoff": "YOU_TINKOFF_TOKEN",
+    "tinkoffAccountId": "YOU_TINKOFF_ACCOUNT",
     "alpacaKey": "YOU_ALPACA_KEY",
     "alpacaSecret": "YOU_ALPACA_SECRET"
 }

@@ -8,7 +8,7 @@ module.exports = function (plop) {
             {
                 type: 'input',
                 name: 'name',
-                message: 'Enter name:',
+                message: 'Enter strategy name:',
             },
         ],
         actions: [

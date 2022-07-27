@@ -160,6 +160,10 @@ export class SpikesG extends Debut {
         }
     }
 
+    async onTick(candle: Candle) {
+        console.log(candle.c);
+    }
+
     async openMonitoring() {
         if (!this.events) {
             return;
