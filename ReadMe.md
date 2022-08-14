@@ -1,10 +1,14 @@
 ![npm](https://img.shields.io/npm/v/@debut/community-core)
 ![npm](https://img.shields.io/npm/dm/@debut/community-core)
-![NPM](https://img.shields.io/npm/l/@debut/community-core)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Support me on Patreon](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.vercel.app%2Fapi%3Fusername%3Dbusinessduck%26type%3Dpatrons%26suffix%3DEnterprise%2520users&style=flat)](https://patreon.com/businessduck)
 [![Telegram crypto trading orders stream](https://badgen.net/badge/tg/crypt:stream/blue?icon=telegram)](https://t.me/debutjs)
 [![Telegram stocks trading orders stream](https://badgen.net/badge/tg/stocks:stream/cyan?icon=telegram)](https://t.me/debutjs2)
-# Trading Strategies Based on Debut/Community Edition
+
+<p align="center">
+  <img src="./.github/logo-small.png" />
+</p>
+
 
 Debut is an ecosystem for developing and launching trading strategies. An analogue of the well-known `ZenBot`, but with much more flexible possibilities for constructing strategies. All you need to do is come up with and describe the entry points to the market and connect the necessary [plugins](https://github.com/debut-js/Plugins) to work. Everything else is a matter of technology: **genetic algorithms** - will help you choose the most effective parameters for the strategy (period, stops, and others), **ticker selection module** - will help you find an asset suitable for the strategy (token or share), on which it will work best.
 
@@ -208,7 +212,13 @@ You can read more about the test run parameters in the [documentation](https://d
 Run the command:
 
 ```bash
-npm run genetic -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000 --log
+npm run genetic -- --bot=FTBot --ticker=CRVUSDT --days=200 --gap=30 --gen=12 --pop=2000
+```
+
+or with gap 60 days from now, and WFO enabled with type `rolling` also available `--wfo` default type is 'anchored' wfo
+
+```bash
+npm run genetic -- --ticker=BTCUSDT --bot=FTBot --amount=500 --gen=25 --pop=10000 --days=300 --gap=60 --wfo=rolling
 ```
 
 More details about the launch parameters of the genetics can be found in the [documentation](https://debutjs.io/)
