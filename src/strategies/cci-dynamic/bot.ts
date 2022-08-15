@@ -7,12 +7,12 @@ import { statsPlugin, StatsPluginAPI } from '@debut/plugin-stats';
 import { ShutdownPluginAPI } from '@debut/plugin-genetic-shutdown';
 import { Debut } from '@debut/community-core';
 import { DebutOptions, BaseTransport, OrderType, Candle } from '@debut/types';
-import { dynamicTakesPlugin, DynamicTakesPluginAPI, DynamicTakesPluginOptions } from '@debut/plugin-dynamic-takes';
 import { orders } from '@debut/plugin-utils';
+import { VirtualTakesOptions, virtualTakesPlugin, VirtualTakesPluginAPI } from '@debut/plugin-virtual-takes';
 
 export interface CCIDynamicBotOptions
     extends SessionPluginOptions,
-        DynamicTakesPluginOptions,
+        VirtualTakesOptions,
         OrderExpireOptions,
         DebutOptions {
     atrPeriod: number;
@@ -34,7 +34,7 @@ export interface CCIDynamicBotOptions
 
 export class CCIDynamic extends Debut {
     declare opts: CCIDynamicBotOptions;
-    declare plugins: StatsPluginAPI & ReportPluginAPI & ShutdownPluginAPI & DynamicTakesPluginAPI;
+    declare plugins: StatsPluginAPI & ReportPluginAPI & ShutdownPluginAPI & VirtualTakesPluginAPI;
     private cci: CCI;
     private levels: UniLevel<typeof SMA | typeof EMA | typeof WEMA | typeof LWMA>;
     private atr: ATR;
@@ -52,7 +52,7 @@ export class CCIDynamic extends Debut {
         this.registerPlugins([
             this.opts.from && this.opts.to && sessionPlugin(this.opts),
             this.opts.reinvest ? reinvestPlugin() : null,
-            dynamicTakesPlugin(this.opts),
+            virtualTakesPlugin(this.opts),
             statsPlugin(this.opts),
             orderExpirePlugin(this.opts),
         ]);
@@ -201,7 +201,7 @@ export class CCIDynamic extends Debut {
             stop = c + this.atrValue * (this.opts.atrMultiplier / this.opts.stopTakeRatio);
         }
 
-        this.plugins.dynamicTakes.setForOrder(order.cid, take, stop);
+        this.plugins.takes.setPricesForOrder(order.cid, take, stop);
         this.insideNormal = false;
         return order;
     }

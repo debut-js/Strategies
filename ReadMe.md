@@ -9,77 +9,46 @@
   <img src="./.github/logo-small.png" />
 </p>
 
+# Debut - Trading Framework
 
 Debut is an ecosystem for developing and launching trading strategies. An analogue of the well-known `ZenBot`, but with much more flexible possibilities for constructing strategies. All you need to do is come up with and describe the entry points to the market and connect the necessary [plugins](https://github.com/debut-js/Plugins) to work. Everything else is a matter of technology: **genetic algorithms** - will help you choose the most effective parameters for the strategy (period, stops, and others), **ticker selection module** - will help you find an asset suitable for the strategy (token or share), on which it will work best.
 
-Debut is based on the architecture of the core and add-on plugins that allow flexible customization of any solutions. The main goal of the entire Debut ecosystem is to simplify the process of creating and launching working trading robots on various exchanges.
+Debut is based on the architecture of the core and add-on plugins that allow you to flexibly customize any solution. The main goal of the entire Debut ecosystem is to simplify the process of creating and launching working trading robots on various exchanges.
 
-## Available for
+## Features
 
+<p align="center"><img src="./assets/preview.gif" width="800"></p>
+
+- Multiple exchanges API
+- Backtesting with historical data
+- Backtesting results visualization
+- Backtesting live preview
+- Strategy optimisation (genetic algorithms, multi thread)
+- Stretegy overfitting control (Walk-Forward)
+- Cross timeframe candles access
+- Simple working with data using callbacks e.g. [onCandle](#onCandle), [onTick](#onTick), [onDepth](#onDepth) ...
+- Written in TypeScript (JavaScript), may be executed in browser
+- Customizable with [plugins](https://github.com/debut-js/Plugins)
+- Can use community edition for free with limitations
+
+## Available brokers
 <p>
-    <img src="https://github.com/debut-js/Core/blob/master/.github/assets/alpaca.png" alt="Alpaca API" width="64">
-    <img src="https://github.com/debut-js/Core/blob/master/.github/assets/binance.png" alt="Binance API" width="64">
-    <img src="https://github.com/debut-js/Core/blob/master/.github/assets/tinkoff.png" alt="Tinkoff API (Russia only)" width="64">
-    <a href="https://www.patreon.com/bePatron?u=57560983"><img src="https://github.com/debut-js/Core/blob/master/.github/assets/buy2.png" alt="Request implementation" width="64"></a>
+    <img src="https://raw.githubusercontent.com/debut-js/Core/master/.github/assets/alpaca.png" alt="Alpaca API" width="64">
+    <img src="https://raw.githubusercontent.com/debut-js/Core/master/.github/assets/binance.png" alt="Binance API" width="64">
+    <img src="https://raw.githubusercontent.com/debut-js/Core/master/.github/assets/tinkoff.png" alt="Tinkoff API (Russia only)" width="64">
 </p>
 
+Didn't see your broker? You can [donate](https://www.patreon.com/bePatron?u=57560983) for support.
+
 ## Community edition
-We believe in the power of the community! That is why we decided to publish the project. The community version is free, but it has some limitations in commercial use (income from trading startups is not commerce), as well as technical differences in testing strategies. Join the community, join **[developer chat](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
+We believe in the power of the community! That is why we decided to publish the project. The community version is free, but it has some limitations in commercial use (income from trading startups is not commerce), as well as technical differences in testing strategies. Join the community, join the **[developer chat](https://t.me/joinchat/Acu2sbLIy_c0OWIy)**
 
-## Enterprise edition ($15/mo [buy now!](https://www.patreon.com/bePatron?u=57560983))
-The Enterprise version is a fully functional version of Debut, with a maximum of possibilities for emulating real market behavior.
+## Enterprise edition
+**(Available by [subscription](https://www.patreon.com/bePatron?u=57560983) for $20/mo)**
 
-Aggregation of candles:
-All candles are aggregated from incoming data from shorter time periods. This allows you to get access to any timeframe on the fly with only 1 candle stream real by subscription. So you can get daily candles from 15 minute ones.
-
-Tick ​​emulation:
-On the basis of candlestick aggregation, a mechanism for filling candles of any timeframe from OHLC / OLHC ticks of 1-minute candles has been created. This allows you to create more than 60 price ticks in one 15-minute interval or 240 ticks inside each 1 hour candle.
-
-<table>
-<thead>
-<tr>
-<th> Functionality </th>
-<th> Community </th>
-<th> Enterprise </th>
-</tr>
-</thead>
-<tbody> <tr>
-<td> Strategy Tester </td>
-<td align="center"> ✅ </td>
-<td align="center"> ✅ </td>
-</tr>
-<tr>
-<td> Emulation of OHLC ticks in the tester </td>
-<td align="center"> ✅ </td>
-<td align="center"> ✅ </td>
-</tr>
-<tr>
-<td> Search modle (finder) suitable for the strategy of assets </td>
-<td align="center"> ✅ </td>
-<td align="center"> ✅ </td>
-</tr>
-<tr>
-<tr>
-<td> M1 candlestick data for tick emulation </td>
-<td align="center"> ❌ </td>
-<td align="center"> ✅ </td>
-</tr>
-<tr>
-<td> Synthetic emulation of ticks in the tester (tick size no more than 0.75%) </td>
-<td align="center"> ❌ </td>
-<td align="center"> ✅ </td>
-</tr>
-<tr>
-<td> Access to major candles from working timeframe</td>
-<td align="center"> ❌ </td>
-<td align="center"> ✅ </td>
-</tr>
-<tr>
-<td> <b>Alpaca</b> supports `5min`, `15min` and others Debut timeframes </td>
-<td align="center"> ❌ </td>
-<td align="center"> ✅ </td>
-</tr>
-</tbody> </table>
+* Cross timeframe candles access (from lower to higher candles)
+* Advanced tick emulation in backtesting (60+ ticks per candle)
+* Tinkoff and Alpaca supports all timeframes (programmaticaly solved broker issue)
 
 ## Strategy Import from TradingView ($1000 [buy now!](https://www.patreon.com/bePatron?u=57560983))
 If you need help transferring a strategy from TradingView to the Debut ecosystem. Transferring a strategy takes up to 3 business days. You can also request to create a strategy based on an article or your own formula.
@@ -103,7 +72,7 @@ Strategy statistics were collected based on the [plugin statistics](https://gith
 Visualization is done using the [Report plugin](https://github.com/debut-js/Plugins/tree/master/packages/report).
 
 ## System requirements
-To work, you need [NodeJS 14.xx/npm 7.xx](https://nodejs.org/en/) ([installation instructions](https://htmlacademy.ru/blog/boost/tools/installing-nodejs))
+To work, you need [NodeJS 16.xx/npm 7.xx](https://nodejs.org/en/) ([installation instructions](https://htmlacademy.ru/blog/boost/tools/installing-nodejs))
 
 ## [Documentation](https://debutjs.io)
 
