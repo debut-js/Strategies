@@ -10,7 +10,6 @@ export const BTCUSDT: CCIDynamicBotOptions = {
     currency: 'USDT',
     interval: '15min',
     amount: 500,
-    maxRetryOrders: 0,
     orderCandlesLimit: 100,
     closeAtZero: false,
     stopTakeRatio: 2,
@@ -26,6 +25,10 @@ export const BTCUSDT: CCIDynamicBotOptions = {
     zeroClose: false,
     sandbox: true,
     cciAtr: false,
+    maxRetryOrders: 3,
+    reduceWhen: 1,
+    reduceSize: 0.5,
+    manual: true,
     id: 29,
 };
 

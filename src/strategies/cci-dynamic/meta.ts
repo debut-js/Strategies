@@ -20,6 +20,11 @@ const parameters: GeneticSchema<CCIDynamicBotOptions> = {
     orderCandlesLimit: { min: 10, max: 100, int: true },
     zeroClose: { bool: true },
     signalFilter: { bool: true },
+    takeProfit: { min: 1, max: 10 },
+    stopLoss: { min: 1, max: 10 },
+    reduceWhen: { min: 1, max: 5 },
+    reduceSize: { min: 0.2, max: 0.9 },
+    trailing: { min: 0, max: 3, int: true },
 };
 
 const meta: DebutMeta = {

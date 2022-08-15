@@ -193,15 +193,18 @@ export class CCIDynamic extends Debut {
         let take = 0;
         let stop = 0;
 
-        if (target === OrderType.BUY) {
-            take = c + this.atrValue * this.opts.atrMultiplier;
-            stop = c - this.atrValue * (this.opts.atrMultiplier / this.opts.stopTakeRatio);
-        } else {
-            take = c - this.atrValue * this.opts.atrMultiplier;
-            stop = c + this.atrValue * (this.opts.atrMultiplier / this.opts.stopTakeRatio);
+        if (this.opts.manual) {
+            if (target === OrderType.BUY) {
+                take = c + this.atrValue * this.opts.atrMultiplier;
+                stop = c - this.atrValue * (this.opts.atrMultiplier / this.opts.stopTakeRatio);
+            } else {
+                take = c - this.atrValue * this.opts.atrMultiplier;
+                stop = c + this.atrValue * (this.opts.atrMultiplier / this.opts.stopTakeRatio);
+            }
+
+            this.plugins.takes.setPricesForOrder(order.cid, take, stop);
         }
 
-        this.plugins.takes.setPricesForOrder(order.cid, take, stop);
         this.insideNormal = false;
         return order;
     }
