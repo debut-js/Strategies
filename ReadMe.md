@@ -50,9 +50,6 @@ We believe in the power of the community! That is why we decided to publish the 
 * Advanced tick emulation in backtesting (60+ ticks per candle)
 * Tinkoff and Alpaca supports all timeframes (programmaticaly solved broker issue)
 
-## Strategy Import from TradingView ($1000 [buy now!](https://www.patreon.com/bePatron?u=57560983))
-If you need help transferring a strategy from TradingView to the Debut ecosystem. Transferring a strategy takes up to 3 business days. You can also request to create a strategy based on an article or your own formula.
-
 We are streaming Enterprise-based deals live on our [telegram channel](https://t.me/debutjs)
 
 **Find out the price by sending a request to [sales@debutjs.io](mailto:sales@debutjs.io)**
