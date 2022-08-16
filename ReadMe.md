@@ -65,7 +65,7 @@ The project has two starting trading strategies "For example" how to work with t
 An example of the strategy [SpikesG](/src/strategies/spikes-grid/ReadMe.md) in 200 days. Optimization was carried out in 180 days and 20 days of free work on untrained data.
 An initial deposit of *$500 was used*
 
-<p align="center"> <img src="/src/strategies/spikes-grid/img/BATUSDT.png" width="800"> </p>
+<p align="center"> <img src="/.github/report.png" width="800"> </p>
 
 Strategy statistics were collected based on the [plugin statistics](https://github.com/debut-js/Plugins/tree/master/packages/stats), follow the link to learn more about the meaning of some statistics.
 
