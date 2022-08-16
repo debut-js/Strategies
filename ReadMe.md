@@ -290,7 +290,7 @@ A measure of the activity rating of buyers and sellers for several pairs. This t
 
 #### Start
 ```bash
-npm run compile && node ./tools/buysellratio/index.js
+npm run compile && node ./out/tools/buysellratio/index.js
 ```
 
 ### Screenshot
