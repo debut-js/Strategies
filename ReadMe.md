@@ -135,6 +135,7 @@ For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openap
     "tinkoff": "YOUR_TOKEN",
     "tinkoffAccountId": "YOUR_ACCOUNT_ID",
 }
+```
 
 Get your tinkoff accounts by this hack and copy one of available account identity to `tinkoffAccountId`:
 
