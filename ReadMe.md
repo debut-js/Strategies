@@ -59,6 +59,7 @@ Incorrect settings can cause serious financial losses.
 
 The project has two starting trading strategies "For example" how to work with the system.
 
+## CCI Dynamic strategy report
 An example of the strategy [CCI Dynamic](/src/strategies/cci-dynamic/) in 100 days. Optimization was carried out in 180 days and 20 days of free work on untrained data.
 An initial deposit of *$500 was used*
 
