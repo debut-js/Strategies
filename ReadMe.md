@@ -62,10 +62,41 @@ Incorrect settings can cause serious financial losses.
 
 The project has two starting trading strategies "For example" how to work with the system.
 
-An example of the strategy [SpikesG](/src/strategies/spikes-grid/ReadMe.md) in 200 days. Optimization was carried out in 180 days and 20 days of free work on untrained data.
+An example of the strategy [CCI Dynamic](/src/strategies/cci-dynamic/) in 100 days. Optimization was carried out in 180 days and 20 days of free work on untrained data.
 An initial deposit of *$500 was used*
 
 <p align="center"> <img src="/.github/report.png" width="800"> </p>
+
+**Report analysis**
+
+```
+startBalance: 500
+balance: 1183.97
+maxBalance: 1186.37
+minBalance: 500
+maxMarginUsage: 1892.54
+profit: 683.97
+long: 273
+longRight: 243
+short: 282
+shortRight: 277
+absoluteDD: 21.06
+relativeDD: 30.31
+potentialDD: 51.9
+maxWin: 6.21
+maxLoose: -8.14
+profitProb: 0.94
+looseProb: 0.06
+avgProfit: 4.54
+avgLoose: 47.95
+expectation: 1.23
+failLine: 6
+rightLine: 20
+avgFailLine: 1.93
+avgRightLine: 5.36
+ticksHandled: 9637
+candlesHandled: 9636
+```
 
 Strategy statistics were collected based on the [plugin statistics](https://github.com/debut-js/Plugins/tree/master/packages/stats), follow the link to learn more about the meaning of some statistics.
 
