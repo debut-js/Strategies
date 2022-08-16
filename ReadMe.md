@@ -139,6 +139,10 @@ For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openap
 
 Get your tinkoff accounts by this hack and copy one of available account identity to `tinkoffAccountId`:
 
+execute command `npm run getAccountId`
+
+or
+
 ```javascript
 tinkoffTransport.api.users.getAccounts({}).then(res => {
     console.log(res);
