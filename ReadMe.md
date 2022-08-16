@@ -126,7 +126,7 @@ To work, you need [NodeJS 16.xx/npm 7.xx](https://nodejs.org/en/) ([installation
 ### Obtaining API tokens
 
 ### Installing tokens
-To work, you need to create a .tokens.json file, add a token to it for work.
+**To work, you need to create a .tokens.json file, add a token to it for work.**
 
 For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openapi/auth)):
 
@@ -137,7 +137,7 @@ For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openap
 }
 ```
 
-Get your tinkoff accounts by this hack and copy one of available account identity to `tinkoffAccountId`:
+**Get your tinkoff accounts by this hack and copy one of available account identity to `tinkoffAccountId`:**
 
 execute command `npm run getAccountId`
 
@@ -149,7 +149,7 @@ tinkoffTransport.api.users.getAccounts({}).then(res => {
 });
 ```
 
-For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)):
+**For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)):**
 ```json
 {
     "binance": "YOUR_TOKEN",
@@ -157,13 +157,14 @@ For Binance ([instructions](https://www.binance.com/ru/support/faq/360002502072)
 }
 ```
 
-For Alpaca ([Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)):
+**For Alpaca ([Alpaca instructions](https://alpaca.markets/docs/api-documentation/api-v2/)):**
 ```json
 {
     "alpacaKey": "YOUR_TOKEN",
     "alpacaSecret": "YOUR_SECRET"
 }
 ```
+
 All tokens can be getted by call: `cli.getTokens()` also you can use any field name for the token.
 
 ## Installing npm packages
