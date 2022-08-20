@@ -17,7 +17,7 @@ Debut is based on the architecture of the core and add-on plugins that allow you
 
 ## Features
 
-<p align="center"><img src="./assets/preview.gif" width="800"></p>
+<p align="center"><img src="https://github.com/debut-js/Core/raw/master/.github/preview.gif" width="800"></p>
 
 - Multiple exchanges API
 - Backtesting with historical data
