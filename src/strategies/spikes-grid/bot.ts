@@ -7,6 +7,7 @@ import { gridPlugin, GridPluginOptions, Grid, GridPluginAPI } from '@debut/plugi
 import { BollingerBands } from '@debut/indicators';
 import { DebutOptions, Candle, BaseTransport, OrderType } from '@debut/types';
 import { Debut } from '@debut/community-core';
+import { virtualTakesPlugin } from '@debut/plugin-virtual-takes';
 
 export interface SpikesGOptions extends DebutOptions, SessionPluginOptions, GridPluginOptions {
     bandsPeriod: number;
@@ -41,6 +42,7 @@ export class SpikesG extends Debut {
             this.opts.from && this.opts.to && sessionPlugin(this.opts),
             this.opts.reinvest ? reinvestPlugin() : null,
             statsPlugin(this.opts),
+            virtualTakesPlugin({ manual: true }),
             gridPlugin(this.opts),
         ]);
 
@@ -158,10 +160,6 @@ export class SpikesG extends Debut {
         if (this.events !== prevEvents) {
             await this.openMonitoring();
         }
-    }
-
-    async onTick(candle: Candle) {
-        console.log(candle.c);
     }
 
     async openMonitoring() {
