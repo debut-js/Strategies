@@ -6,7 +6,7 @@
 [![Telegram stocks trading orders stream](https://badgen.net/badge/tg/stocks:stream/cyan?icon=telegram)](https://t.me/debutjs2)
 
 <p align="center">
-  <img src="./.github/logo-small.png" />
+  <img src="https://github.com/debut-js/Core/raw/master/.github/assets/logo-small.png" />
 </p>
 
 # Debut - Trading Framework
@@ -32,10 +32,12 @@ Debut is based on the architecture of the core and add-on plugins that allow you
 - Can use community edition for free with limitations
 
 ## Available brokers
+
 <p>
-    <img src="https://raw.githubusercontent.com/debut-js/Core/master/.github/assets/alpaca.png" alt="Alpaca API" width="64">
-    <img src="https://raw.githubusercontent.com/debut-js/Core/master/.github/assets/binance.png" alt="Binance API" width="64">
-    <img src="https://raw.githubusercontent.com/debut-js/Core/master/.github/assets/tinkoff.png" alt="Tinkoff API (Russia only)" width="64">
+    <img src="https://github.com/debut-js/Core/blob/master/.github/assets/alpaca.png" alt="Alpaca API" width="64">
+    <img src="https://github.com/debut-js/Core/blob/master/.github/assets/binance.png" alt="Binance API" width="64">
+    <img src="https://github.com/debut-js/Core/blob/master/.github/assets/tinkoffv2.png" alt="Tinkoff API (Russia only)" width="64">
+    <a href="https://www.patreon.com/bePatron?u=57560983"><img src="https://github.com/debut-js/Core/blob/master/.github/assets/buy2.png" alt="Request implementation" width="64"></a>
 </p>
 
 Didn't see your broker? You can [donate](https://www.patreon.com/bePatron?u=57560983) for support.
