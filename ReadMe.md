@@ -54,7 +54,7 @@ We believe in the power of the community! That is why we decided to publish the 
 
 We are streaming Enterprise-based deals live on our [telegram channel](https://t.me/debutjs)
 
-**Find out the price by sending a request to [sales@debutjs.io](mailto:sales@debutjs.io)**
+**Find out the price by sending a request to [debutjs.io@domainsbyproxy.com](mailto:debutjs.io@domainsbyproxy.com)**
 
 **Remember!** Starting a bot and trading in general requires careful study of the associated risks and parameters.
 Incorrect settings can cause serious financial losses.
