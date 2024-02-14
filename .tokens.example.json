@@ -4,5 +4,8 @@
     "tinkoff": "YOU_TINKOFF_TOKEN",
     "tinkoffAccountId": "YOU_TINKOFF_ACCOUNT",
     "alpacaKey": "YOU_ALPACA_KEY",
-    "alpacaSecret": "YOU_ALPACA_SECRET"
+    "alpacaSecret": "YOU_ALPACA_SECRET",
+    "bybit": "YOU_BYBIT_KEY_TEST|YOU_BYBIT_KEY_PROD",
+    "bybitSecret": "YOU_BYBIT_SECRET_TEST|YOU_BYBIT_SECRET_PROD",
+    "bybitTestnet": "1|0"
 }
