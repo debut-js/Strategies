@@ -5,7 +5,7 @@ import { SpikesGOptions } from './strategies/spikes-grid/bot';
 
 // Create a transport layer for working with a broker
 // Note! The token is required in the ./.tokens.json file
-const { binance, binanceSecret, tinkoff, tinkoffAccountId, alpacaKey, alpacaSecret, bybit, bybitSecret, bybitTest } =
+const { binance, binanceSecret, tinkoff, tinkoffAccountId, alpacaKey, alpacaSecret, bybit, bybitSecret, bybitTestnet } =
     cli.getTokens();
 
 const transportCache: Map<string, BaseTransport> = new Map();
@@ -30,7 +30,7 @@ const createTransport = (broker: string) => {
     if (broker === 'binance') {
         return new BinanceTransport(binance, binanceSecret);
     } else if (broker === 'bybit') {
-        return new BybitTransport(bybit, bybitSecret, bybitTest);
+        return new BybitTransport(bybit, bybitSecret, bybitTestnet);
     } else if (broker === 'tinkoff') {
         return new TinkoffTransport(tinkoff, tinkoffAccountId);
     } else if (broker === 'alpaca') {
