@@ -37,3 +37,20 @@ export const TSLA: StochMacdOptions = {
     signalLife: 5,
     id: 4,
 };
+
+export const AAPL: StochMacdOptions = {
+    broker: 'ib',
+    ticker: 'SIG',
+    currency: 'USD',
+    interval: '15min',
+    amount: 1000,
+    stopLoss: 3.93,
+    takeProfit: 4.78,
+    periodEmaFast: 9,
+    periodEmaSlow: 16,
+    periodSignal: 10,
+    stochPeriod: 19,
+    stochSmaPeriod: 12,
+    signalLife: 5,
+    id: 4,
+};
