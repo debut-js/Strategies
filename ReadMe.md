@@ -129,7 +129,7 @@ To work, you need [NodeJS 16.xx/npm 7.xx](https://nodejs.org/en/) ([installation
 ### Installing tokens
 **To work, you need to create a .tokens.json file, add a token to it for work.**
 
-For Tinkoff ([instructions](https://tinkoffcreditsystems.github.io/invest-openapi/auth)):
+For Tinkoff ([instructions](https://russianinvestments.github.io/investAPI/token/#_2)):
 
 ```json
 {
